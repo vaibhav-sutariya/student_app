@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 
 import '../../../../../core/routes/app_router.gr.dart';
 import '../../../../../core/widgets/app_primary_button.dart';
-import '../../../../../cubit/theme_cubit.dart';
 
 @RoutePage()
 class PasswordSuccessPage extends StatelessWidget {
@@ -24,8 +24,8 @@ class PasswordSuccessPage extends StatelessWidget {
               Container(
                 width: 120,
                 height: 120,
-                decoration: const BoxDecoration(
-                  color: Colors.white,
+                decoration: BoxDecoration(
+                  color: context.colors.textInverse,
                   shape: BoxShape.circle,
                 ),
                 child: Center(
@@ -33,24 +33,24 @@ class PasswordSuccessPage extends StatelessWidget {
                     width: 70,
                     height: 70,
                     decoration: BoxDecoration(
-                      color: Color(0xFF00C853), // Green
+                      color: context.colors.success, // Green
                       shape: BoxShape.circle,
                     ),
                     child: Icon(
                       Icons.check_rounded,
-                      color: Colors.white,
+                      color: context.colors.textInverse,
                       size: 40,
                     ),
                   ),
                 ),
               ),
               const SizedBox(height: 32),
-              const Text(
+              Text(
                 'Password Changed!',
                 style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color: context.colors.textInverse,
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -59,7 +59,7 @@ class PasswordSuccessPage extends StatelessWidget {
                 'Your password has been successfully\nreset. You can now login with your\nnew credentials.',
                 style: TextStyle(
                   fontSize: 16,
-                  color: Colors.white.withValues(alpha: 0.8),
+                  color: context.colors.textInverse.withValues(alpha: 0.8),
                   height: 1.5,
                 ),
                 textAlign: TextAlign.center,
@@ -70,7 +70,7 @@ class PasswordSuccessPage extends StatelessWidget {
                   // Navigate Back to Login (Clear Stack)
                   context.router.replaceAll([const LoginRoute()]);
                 },
-                color: Colors.white,
+                color: context.colors.textInverse,
                 borderRadius: 30,
                 child: Text(
                   'Back to Login',

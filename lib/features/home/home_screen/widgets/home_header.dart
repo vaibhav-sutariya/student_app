@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../cubit/theme_cubit.dart';
 
 import 'package:auto_route/auto_route.dart';
 import '../../../../../core/helpers/extensions/responsive_extensions.dart';
@@ -45,7 +46,7 @@ class HomeHeader extends StatelessWidget {
                       child: account?.profileImageUrl == null
                           ? Icon(
                               Icons.person,
-                              color: Colors.white,
+                              color: context.colors.textInverse,
                               size: context.scale(24),
                             )
                           : null,
@@ -57,14 +58,16 @@ class HomeHeader extends StatelessWidget {
                         Text(
                           'Good Morning,',
                           style: TextStyle(
-                            color: Colors.white.withValues(alpha: 0.7),
+                            color: context.colors.textInverse.withValues(
+                              alpha: 0.7,
+                            ),
                             fontSize: context.scaleFont(12),
                           ),
                         ),
                         Text(
                           account?.name ?? 'User',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: context.colors.textInverse,
                             fontSize: context.scaleFont(18),
                             fontWeight: FontWeight.bold,
                           ),
@@ -82,12 +85,12 @@ class HomeHeader extends StatelessWidget {
                 child: Container(
                   padding: EdgeInsets.all(context.scale(8)),
                   decoration: BoxDecoration(
-                    color: Colors.white.withValues(alpha: 0.1),
+                    color: context.colors.textInverse.withValues(alpha: 0.1),
                     shape: BoxShape.circle,
                   ),
                   child: Icon(
                     Icons.notifications_rounded,
-                    color: Colors.white,
+                    color: context.colors.textInverse,
                     size: context.scale(24),
                   ),
                 ),

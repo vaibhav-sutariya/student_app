@@ -1,5 +1,6 @@
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:student_app/core/helpers/extensions/responsive_extensions.dart';
 import 'package:student_app/core/widgets/app_app_bar.dart';
@@ -18,7 +19,7 @@ class NoticePage extends StatelessWidget {
     return BlocProvider(
       create: (context) => NoticeBloc()..add(LoadNoticeData()),
       child: Scaffold(
-        backgroundColor: const Color(0xFFF8F9FA),
+        backgroundColor: context.colors.surface,
         appBar: const AppAppBar(title: 'Notice Board', showBackButton: false),
         body: Column(
           children: [
@@ -57,14 +58,14 @@ class NoticePage extends StatelessWidget {
                             Icon(
                               Icons.notifications_off_outlined,
                               size: context.scale(60),
-                              color: Colors.grey[300],
+                              color: context.colors.textSecondary,
                             ),
                             SizedBox(height: context.scaleHeight(16)),
                             Text(
                               'No notices for this month',
                               style: TextStyle(
                                 fontSize: context.scaleFont(16),
-                                color: Colors.grey[500],
+                                color: context.colors.textSecondary,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
+import '../../../../../cubit/theme_cubit.dart';
 
 import '../../../../../core/helpers/extensions/responsive_extensions.dart';
 import '../models/leave_detail_model.dart';
+import '../../../../../cubit/theme_cubit.dart';
 
 /// Activity log item widget for timeline display
 /// Shows colored dot, title, subtitle, and timestamp
@@ -29,7 +32,7 @@ class ActivityLogItemWidget extends StatelessWidget {
                 width: context.scale(12),
                 height: context.scale(12),
                 decoration: BoxDecoration(
-                  color: _getDotColor(),
+                  color: _getDotColor(context),
                   shape: BoxShape.circle,
                 ),
               ),
@@ -38,7 +41,7 @@ class ActivityLogItemWidget extends StatelessWidget {
                 Container(
                   width: context.scale(2),
                   height: context.scaleHeight(40),
-                  color: Colors.grey[300],
+                  color: context.colors.textSecondary,
                   margin: EdgeInsets.symmetric(
                     vertical: context.scaleHeight(4),
                   ),
@@ -56,7 +59,7 @@ class ActivityLogItemWidget extends StatelessWidget {
                   style: TextStyle(
                     fontSize: context.scaleFont(14),
                     fontWeight: FontWeight.w600,
-                    color: Colors.black87,
+                    color: Colors.black,
                   ),
                 ),
                 SizedBox(height: context.scaleHeight(4)),
@@ -64,7 +67,7 @@ class ActivityLogItemWidget extends StatelessWidget {
                   item.subtitle,
                   style: TextStyle(
                     fontSize: context.scaleFont(12),
-                    color: Colors.grey[600],
+                    color: context.colors.textSecondary,
                   ),
                 ),
               ],
@@ -75,14 +78,14 @@ class ActivityLogItemWidget extends StatelessWidget {
     );
   }
 
-  Color _getDotColor() {
+  Color _getDotColor(BuildContext context) {
     switch (item.type) {
       case ActivityType.approved:
-        return const Color(0xFF4CAF50);
+        return context.colors.success;
       case ActivityType.submitted:
         return const Color(0xFF9C27B0);
       case ActivityType.rejected:
-        return const Color(0xFFF44336);
+        return context.colors.error;
     }
   }
 }

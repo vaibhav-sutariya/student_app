@@ -49,7 +49,7 @@ class ProfileInfoCard extends StatelessWidget {
                 Text(
                   title.toUpperCase(),
                   style: context.textTheme.titleMedium?.copyWith(
-                    color: context.colors.surface500,
+                    color: context.colors.textSecondary,
                     fontWeight: FontWeight.w600,
                     fontSize: context.scaleFont(13),
                     letterSpacing: 1.2,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../cubit/theme_cubit.dart';
 
 class PaperModel {
   final String id;
@@ -29,7 +30,7 @@ class PaperModel {
         date: DateTime(2025, 12, 20),
         subject: 'Mathematics',
         type: 'CHAPTER 5 - ALGEBRA PAPER',
-        color: const Color(0xFF5C6BC0),
+        color: Colors.grey.shade400,
         pdfUrl: basePdfUrl,
       ),
       PaperModel(
@@ -45,7 +46,7 @@ class PaperModel {
         date: DateTime(2025, 12, 10),
         subject: 'English',
         type: 'ESSAY WRITING PAPER',
-        color: const Color(0xFFFF9800),
+        color: Colors.grey.shade400,
         pdfUrl: basePdfUrl,
       ),
       PaperModel(
@@ -53,7 +54,7 @@ class PaperModel {
         date: DateTime(2025, 12, 5),
         subject: 'History',
         type: 'WORLD WAR II PAPER',
-        color: const Color(0xFFEC407A),
+        color: Colors.red,
         pdfUrl: basePdfUrl,
       ),
       PaperModel(

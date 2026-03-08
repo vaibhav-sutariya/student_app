@@ -53,7 +53,7 @@ class _PasswordLoginFormState extends State<PasswordLoginForm> {
                 _isPasswordVisible
                     ? Icons.visibility_outlined
                     : Icons.visibility_off_outlined,
-                color: Colors.grey,
+                color: context.colors.textSecondary,
               ),
             ),
           ),
@@ -93,20 +93,24 @@ class _PasswordLoginFormState extends State<PasswordLoginForm> {
           Row(
             children: [
               Expanded(
-                child: Divider(color: Colors.grey.withValues(alpha: 0.2)),
+                child: Divider(
+                  color: context.colors.textSecondary.withValues(alpha: 0.2),
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Text(
                   'Trouble logging in?',
                   style: TextStyle(
-                    color: Colors.grey[600],
+                    color: context.colors.textSecondary,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
               ),
               Expanded(
-                child: Divider(color: Colors.grey.withValues(alpha: 0.2)),
+                child: Divider(
+                  color: context.colors.textSecondary.withValues(alpha: 0.2),
+                ),
               ),
             ],
           ),
@@ -122,12 +126,16 @@ class _PasswordLoginFormState extends State<PasswordLoginForm> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.lock_rounded, size: 16, color: Colors.grey[500]),
+              Icon(
+                Icons.lock_rounded,
+                size: 16,
+                color: context.colors.textSecondary,
+              ),
               const SizedBox(width: 8),
               Text(
                 'Secure encrypted connection',
                 style: TextStyle(
-                  color: Colors.grey[600],
+                  color: context.colors.textSecondary,
                   fontWeight: FontWeight.w500,
                   fontSize: 12,
                 ),

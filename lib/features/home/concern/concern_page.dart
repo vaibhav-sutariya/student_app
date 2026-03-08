@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/helpers/extensions/responsive_extensions.dart';
 import '../../../../core/widgets/app_app_bar.dart';
@@ -7,7 +8,6 @@ import '../../../../core/widgets/app_loader.dart';
 import '../../../../core/widgets/end_of_list_indicator.dart';
 import '../../../../core/widgets/app_tab_bar.dart';
 import '../../../../core/utils/show_snackbar.dart';
-import '../../../../cubit/theme_cubit.dart';
 import '../../../core/routes/app_router.gr.dart';
 import 'bloc/concern_bloc.dart';
 import 'widgets/concern_item.dart';
@@ -31,7 +31,7 @@ class ConcernPageContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF5F5F7),
+      backgroundColor: context.colors.surface,
       appBar: AppAppBar(
         title: 'My Concerns',
         profileImageUrl: 'https://i.pravatar.cc/300', // Placeholder
@@ -66,7 +66,7 @@ class ConcernPageContent extends StatelessWidget {
                   return Center(
                     child: Text(
                       state.message,
-                      style: const TextStyle(color: Colors.red),
+                      style: TextStyle(color: context.colors.textError),
                     ),
                   );
                 } else if (state is ConcernLoaded) {
@@ -107,7 +107,7 @@ class ConcernPageContent extends StatelessWidget {
         backgroundColor: context.colors.primary,
         foregroundColor: Colors.white,
         elevation: 4,
-        child: const Icon(Icons.add),
+        child: Icon(Icons.add),
       ),
     );
   }
@@ -120,14 +120,14 @@ class ConcernPageContent extends StatelessWidget {
           Icon(
             Icons.inbox_outlined,
             size: context.scale(48),
-            color: Colors.grey[400],
+            color: context.colors.textSecondary,
           ),
           SizedBox(height: context.scaleHeight(16)),
           Text(
             'No concerns found',
             style: TextStyle(
               fontSize: context.scaleFont(16),
-              color: Colors.grey[600],
+              color: context.colors.textSecondary,
             ),
           ),
         ],

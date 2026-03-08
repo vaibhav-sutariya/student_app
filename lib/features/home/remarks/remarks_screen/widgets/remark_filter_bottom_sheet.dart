@@ -74,7 +74,7 @@ class _RemarkFilterBottomSheetState extends State<RemarkFilterBottomSheet> {
 
     return Container(
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: context.colors.textInverse,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(context.scale(20)),
           topRight: Radius.circular(context.scale(20)),
@@ -89,7 +89,7 @@ class _RemarkFilterBottomSheetState extends State<RemarkFilterBottomSheet> {
             width: context.scale(40),
             height: context.scaleHeight(4),
             decoration: BoxDecoration(
-              color: Colors.grey[300],
+              color: context.colors.textSecondary,
               borderRadius: BorderRadius.circular(context.scale(2)),
             ),
           ),
@@ -105,7 +105,7 @@ class _RemarkFilterBottomSheetState extends State<RemarkFilterBottomSheet> {
                   style: TextStyle(
                     fontSize: context.scaleFont(20),
                     fontWeight: FontWeight.w700,
-                    color: const Color(0xFF1A1A1A),
+                    color: Colors.black,
                   ),
                 ),
                 // Always reserve space for Clear button to prevent size changes
@@ -218,7 +218,7 @@ class _FilterSection extends StatelessWidget {
             style: TextStyle(
               fontSize: context.scaleFont(16),
               fontWeight: FontWeight.w700,
-              color: const Color(0xFF1A1A1A),
+              color: Colors.black,
             ),
           ),
         ),
@@ -274,7 +274,7 @@ class _FilterItem extends StatelessWidget {
                 style: TextStyle(
                   fontSize: context.scaleFont(16),
                   fontWeight: FontWeight.w500,
-                  color: const Color(0xFF1A1A1A),
+                  color: Colors.black,
                 ),
               ),
             ),

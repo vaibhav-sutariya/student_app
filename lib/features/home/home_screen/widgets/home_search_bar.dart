@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../cubit/theme_cubit.dart';
 
 import '../../../../../core/helpers/extensions/responsive_extensions.dart';
 import '../cubit/home_search_cubit.dart';
@@ -42,9 +43,12 @@ class _HomeSearchBarState extends State<HomeSearchBar> {
       child: Container(
         height: containerHeight,
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.15),
+          color: context.colors.textInverse.withOpacity(0.15),
           borderRadius: BorderRadius.circular(borderRadius),
-          border: Border.all(color: Colors.white.withOpacity(0.15), width: 1),
+          border: Border.all(
+            color: context.colors.textInverse.withOpacity(0.15),
+            width: 1,
+          ),
         ),
         child: Row(
           children: [
@@ -60,7 +64,7 @@ class _HomeSearchBarState extends State<HomeSearchBar> {
                   _focusNode.unfocus();
                 },
                 style: TextStyle(
-                  color: Colors.white,
+                  color: context.colors.textInverse,
                   fontSize: fontSize,
                   letterSpacing: 0.3,
                 ),
@@ -68,7 +72,7 @@ class _HomeSearchBarState extends State<HomeSearchBar> {
                   fillColor: Colors.transparent,
                   hintText: 'Search here...',
                   hintStyle: TextStyle(
-                    color: Colors.white.withOpacity(0.6),
+                    color: context.colors.textInverse.withOpacity(0.6),
                     fontSize: hintFontSize,
                     letterSpacing: 0.3,
                   ),
@@ -88,12 +92,12 @@ class _HomeSearchBarState extends State<HomeSearchBar> {
               margin: EdgeInsets.all(context.scale(6)),
               padding: EdgeInsets.all(context.scale(6)),
               decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.1),
+                color: context.colors.textInverse.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(context.scale(8)),
               ),
               child: Icon(
                 Icons.search,
-                color: Colors.white,
+                color: context.colors.textInverse,
                 size: iconSize,
               ),
             ),

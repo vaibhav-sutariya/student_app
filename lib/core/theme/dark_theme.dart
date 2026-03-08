@@ -205,4 +205,28 @@ class DarkColors extends AppColors {
 
   @override
   Color get buttonTextColor => const Color(0xFF020035); // Dark blue text for white buttons
+
+  @override
+  Color get textPrimary => Colors.white;
+
+  @override
+  Color get textSecondary => Colors.white70;
+
+  @override
+  Color get textTertiary => Colors.white60;
+
+  @override
+  Color get textInverse => const Color(0xFF0F172A);
+
+  @override
+  Color get textInverseSecondary => const Color(0xFF475569);
+
+  @override
+  Color get textError => error;
+
+  @override
+  Color get textSuccess => success;
+
+  @override
+  Color get textWarning => warning;
 }

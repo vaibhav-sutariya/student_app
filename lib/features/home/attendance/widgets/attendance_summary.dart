@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 
 import '../../../../core/helpers/extensions/responsive_extensions.dart';
-import '../../../../cubit/theme_cubit.dart';
 
 /// Production-ready attendance summary widget with circular indicators
 class AttendanceSummary extends StatelessWidget {
@@ -33,20 +33,20 @@ class AttendanceSummary extends StatelessWidget {
                 style: TextStyle(
                   fontSize: context.scaleFont(16),
                   fontWeight: FontWeight.bold,
-                  color: Colors.grey[800],
+                  color: context.colors.textSecondary,
                 ),
               ),
               Container(
                 width: context.scale(20),
                 height: context.scale(20),
                 decoration: BoxDecoration(
-                  color: Colors.grey[300],
+                  color: context.colors.textSecondary,
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
                   Icons.info_outline,
                   size: context.scale(14),
-                  color: Colors.grey[700],
+                  color: context.colors.textSecondary,
                 ),
               ),
             ],
@@ -67,7 +67,7 @@ class AttendanceSummary extends StatelessWidget {
                 value: presentDays.toDouble(),
                 total: totalDays.toDouble(),
                 label: 'PRESENT',
-                color: const Color(0xFF4CAF50),
+                color: context.colors.success,
               ),
               _buildCircularIndicator(
                 context,
@@ -111,9 +111,7 @@ class AttendanceSummary extends StatelessWidget {
                 child: CircularProgressIndicator(
                   value: 1.0,
                   strokeWidth: strokeWidth,
-                  valueColor: AlwaysStoppedAnimation<Color>(
-                    Colors.grey[200]!,
-                  ),
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.grey[200]!),
                 ),
               ),
               // Progress circle
@@ -138,7 +136,7 @@ class AttendanceSummary extends StatelessWidget {
                     style: TextStyle(
                       fontSize: context.scaleFont(18),
                       fontWeight: FontWeight.bold,
-                      color: Colors.grey[800],
+                      color: context.colors.textSecondary,
                     ),
                   ),
                 ],
@@ -151,7 +149,7 @@ class AttendanceSummary extends StatelessWidget {
           label,
           style: TextStyle(
             fontSize: context.scaleFont(11),
-            color: Colors.grey[600],
+            color: context.colors.textSecondary,
             fontWeight: FontWeight.w500,
           ),
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../cubit/theme_cubit.dart';
 
 class SyllabusModel {
   final String id;
@@ -37,7 +38,7 @@ class SyllabusModel {
         date: DateTime(2025, 9, 30),
         subject: 'All Subjects',
         type: 'TERM - 1 SYLLABUS & DRAFT STYLE',
-        color: const Color(0xFF5C6BC0),
+        color: Colors.grey.shade400,
         pdfUrl: basePdfUrl,
       ),
       SyllabusModel(
@@ -53,7 +54,7 @@ class SyllabusModel {
         date: DateTime(2025, 6, 21),
         subject: 'Academic Plan',
         type: 'YEARLY SPLIT SYLLABUS',
-        color: const Color(0xFFFF9800),
+        color: Colors.grey.shade400,
         pdfUrl: basePdfUrl,
       ),
       SyllabusModel(
@@ -61,7 +62,7 @@ class SyllabusModel {
         date: DateTime(2025, 5, 15),
         subject: 'Pre-Session',
         type: 'FOUNDATION SYLLABUS',
-        color: const Color(0xFFEC407A),
+        color: Colors.red,
         pdfUrl: basePdfUrl,
       ),
     ];

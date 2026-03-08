@@ -180,7 +180,7 @@ class _FamilyInfoWidgetState extends State<FamilyInfoWidget> {
         Text(
           label,
           style: context.textTheme.bodyMedium?.copyWith(
-            color: context.colors.surface400,
+            color: context.colors.textTertiary,
             fontSize: context.scaleFont(14),
           ),
         ),
@@ -189,7 +189,7 @@ class _FamilyInfoWidgetState extends State<FamilyInfoWidget> {
             value,
             textAlign: TextAlign.end,
             style: context.textTheme.bodyMedium?.copyWith(
-              color: context.colors.surface900,
+              color: Colors.black,
               fontWeight: isBold ? FontWeight.w600 : FontWeight.normal,
               fontSize: context.scaleFont(14),
             ),

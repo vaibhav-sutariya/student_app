@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 
 import '../../../../../core/helpers/extensions/responsive_extensions.dart';
-
 
 /// Production-ready remark detail item widget
 /// Optimized for performance with const constructor
@@ -35,11 +35,7 @@ class RemarkDetailItem extends StatelessWidget {
             color: iconColor.withOpacity(0.1),
             borderRadius: BorderRadius.circular(context.scale(8)),
           ),
-          child: Icon(
-            icon,
-            color: iconColor,
-            size: context.scale(24),
-          ),
+          child: Icon(icon, color: iconColor, size: context.scale(24)),
         ),
         SizedBox(width: context.scale(12)),
         // Label and Value
@@ -52,7 +48,7 @@ class RemarkDetailItem extends StatelessWidget {
                 style: TextStyle(
                   fontSize: context.scaleFont(12),
                   fontWeight: FontWeight.w500,
-                  color: Colors.grey[600],
+                  color: context.colors.textSecondary,
                 ),
               ),
               SizedBox(height: context.scaleHeight(4)),
@@ -79,7 +75,7 @@ class RemarkDetailItem extends StatelessWidget {
                       width: context.scale(6),
                       height: context.scale(6),
                       decoration: BoxDecoration(
-                        color: valueColor ?? const Color(0xFFE53935),
+                        color: valueColor ?? context.colors.error,
                         shape: BoxShape.circle,
                       ),
                     ),

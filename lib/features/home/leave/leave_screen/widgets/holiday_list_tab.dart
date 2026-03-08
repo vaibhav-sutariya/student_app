@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../../cubit/theme_cubit.dart';
 
 import '../../../../../core/helpers/extensions/responsive_extensions.dart';
 import '../../../../../core/widgets/app_loader.dart';
@@ -30,14 +31,14 @@ class HolidayListTab extends StatelessWidget {
                   Icon(
                     Icons.event_available_outlined,
                     size: context.scale(64),
-                    color: Colors.grey.withValues(alpha: 0.5),
+                    color: context.colors.textSecondary.withValues(alpha: 0.5),
                   ),
                   SizedBox(height: context.scaleHeight(16)),
                   Text(
                     'No Holidays',
                     style: TextStyle(
                       fontSize: context.scaleFont(16),
-                      color: Colors.grey,
+                      color: context.colors.textSecondary,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -78,7 +79,7 @@ class HolidayListTab extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(context.scale(16)),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: context.colors.textInverse,
           borderRadius: BorderRadius.circular(context.scale(12)),
           boxShadow: [
             BoxShadow(
@@ -130,7 +131,7 @@ class HolidayListTab extends StatelessWidget {
                     style: TextStyle(
                       fontSize: context.scaleFont(14),
                       fontWeight: FontWeight.w600,
-                      color: Colors.black87,
+                      color: Colors.black,
                     ),
                   ),
                   SizedBox(height: context.scaleHeight(4)),

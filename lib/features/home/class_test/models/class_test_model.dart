@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../cubit/theme_cubit.dart';
 
 class ClassTestModel {
   final String id;
@@ -29,7 +30,7 @@ class ClassTestModel {
         date: DateTime(2025, 12, 5),
         subject: 'Mathematics',
         type: 'CHAPTER 1 - NUMBERS TEST',
-        color: const Color(0xFF5C6BC0),
+        color: Colors.grey.shade400,
         pdfUrl: basePdfUrl,
       ),
       ClassTestModel(
@@ -45,7 +46,7 @@ class ClassTestModel {
         date: DateTime(2025, 12, 12),
         subject: 'English',
         type: 'GRAMMAR - NOUNS TEST',
-        color: const Color(0xFFFF9800),
+        color: Colors.grey.shade400,
         pdfUrl: basePdfUrl,
       ),
       ClassTestModel(
@@ -53,7 +54,7 @@ class ClassTestModel {
         date: DateTime(2025, 12, 15),
         subject: 'History',
         type: 'ANCIENT CIVILIZATIONS TEST',
-        color: const Color(0xFFEC407A),
+        color: Colors.red,
         pdfUrl: basePdfUrl,
       ),
       ClassTestModel(

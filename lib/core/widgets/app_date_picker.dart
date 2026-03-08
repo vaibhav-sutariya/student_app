@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 import 'package:intl/intl.dart';
 
-import '../../cubit/theme_cubit.dart';
 import '../helpers/extensions/responsive_extensions.dart';
 
 /// Globally reusable date picker widget
@@ -129,7 +129,7 @@ class AppDatePickerField extends StatelessWidget {
 
     // Use same color logic as AppTextField
     final effectiveColor =
-        inputDecorationTheme.fillColor ?? const Color(0xFFF8F9FB);
+        inputDecorationTheme.fillColor ?? context.colors.surface;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -168,11 +168,11 @@ class AppDatePickerField extends StatelessWidget {
               ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(context.scale(16)),
-                borderSide: const BorderSide(color: Color(0xFFE0E0E0)),
+                borderSide: BorderSide(color: context.colors.surface200),
               ),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(context.scale(16)),
-                borderSide: const BorderSide(color: Color(0xFFE0E0E0)),
+                borderSide: BorderSide(color: context.colors.surface200),
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(context.scale(16)),

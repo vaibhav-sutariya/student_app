@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 import 'package:intl/intl.dart';
 import '../../../../core/helpers/extensions/responsive_extensions.dart';
-import '../../../../cubit/theme_cubit.dart';
 import '../models/homework_model.dart';
 import '../../../../core/widgets/app_capsule_button.dart';
 
@@ -15,7 +15,7 @@ class HomeworkCard extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: context.scaleHeight(16)),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: context.colors.textInverse,
         borderRadius: BorderRadius.circular(context.scale(16)),
         boxShadow: [
           BoxShadow(
@@ -86,7 +86,7 @@ class HomeworkCard extends StatelessWidget {
                   : 'Submitted',
               valueColor: homework.status == HomeworkStatus.pending
                   ? const Color(0xFFFF6D00)
-                  : const Color(0xFF2E7D32),
+                  : context.colors.success,
               isBoldValue: true,
               hasBullet: true,
             ),

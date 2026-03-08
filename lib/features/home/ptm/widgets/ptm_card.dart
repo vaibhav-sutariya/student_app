@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../../../../core/helpers/extensions/responsive_extensions.dart';
-import '../../../../../../cubit/theme_cubit.dart';
+import '../../../../cubit/theme_cubit.dart';
 import '../models/ptm_model.dart';
 
 class PtmCard extends StatelessWidget {
@@ -65,7 +65,7 @@ class PtmCard extends StatelessWidget {
                     children: [
                       Icon(
                         Icons.access_time_rounded,
-                        color: context.colors.surface600,
+                        color: context.colors.textSecondary,
                         size: context.scale(16),
                       ),
                       SizedBox(width: context.scale(6)),
@@ -75,7 +75,7 @@ class PtmCard extends StatelessWidget {
                           style: TextStyle(
                             fontSize: context.scaleFont(13),
                             fontWeight: FontWeight.w500,
-                            color: context.colors.surface600,
+                            color: context.colors.textSecondary,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -98,7 +98,7 @@ class PtmCard extends StatelessWidget {
                   style: TextStyle(
                     fontSize: context.scaleFont(16),
                     fontWeight: FontWeight.bold,
-                    color: context.colors.surface900,
+                    color: Colors.black,
                   ),
                 ),
                 SizedBox(height: context.scaleHeight(4)),
@@ -107,14 +107,14 @@ class PtmCard extends StatelessWidget {
                     Icon(
                       Icons.person_outline_rounded,
                       size: context.scale(16),
-                      color: context.colors.surface500,
+                      color: context.colors.textSecondary,
                     ),
                     SizedBox(width: context.scale(4)),
                     Text(
                       'Teacher: ${ptm.teacherName}',
                       style: TextStyle(
                         fontSize: context.scaleFont(13),
-                        color: context.colors.surface600,
+                        color: context.colors.textSecondary,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -125,7 +125,7 @@ class PtmCard extends StatelessWidget {
                   ptm.description,
                   style: TextStyle(
                     fontSize: context.scaleFont(14),
-                    color: context.colors.surface600,
+                    color: context.colors.textSecondary,
                     height: 1.5,
                   ),
                 ),

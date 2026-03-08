@@ -204,4 +204,28 @@ class LightColors extends AppColors {
 
   @override
   Color get buttonTextColor => const Color(0xFFFFFFFF);
+
+  @override
+  Color get textPrimary => surface900;
+
+  @override
+  Color get textSecondary => surface600;
+
+  @override
+  Color get textTertiary => surface400;
+
+  @override
+  Color get textInverse => const Color(0xFFFFFFFF);
+
+  @override
+  Color get textInverseSecondary => Colors.white.withValues(alpha: 0.7);
+
+  @override
+  Color get textError => error;
+
+  @override
+  Color get textSuccess => success;
+
+  @override
+  Color get textWarning => warning;
 }

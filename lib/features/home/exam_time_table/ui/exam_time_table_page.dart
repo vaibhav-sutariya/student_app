@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../cubit/theme_cubit.dart';
 
 import '../../../../core/di/injection.dart';
 import '../../../../core/widgets/app_app_bar.dart';
@@ -39,7 +40,7 @@ class ExamTimeTablePage extends StatelessWidget implements AutoRouteWrapper {
                     Text(
                       state.message,
                       textAlign: TextAlign.center,
-                      style: const TextStyle(color: Colors.red),
+                      style: TextStyle(color: context.colors.textError),
                     ),
                     const SizedBox(height: 16),
                     TextButton(
@@ -48,7 +49,7 @@ class ExamTimeTablePage extends StatelessWidget implements AutoRouteWrapper {
                           LoadExamTimeTable(),
                         );
                       },
-                      child: const Text('Retry'),
+                      child: Text('Retry'),
                     ),
                   ],
                 ),

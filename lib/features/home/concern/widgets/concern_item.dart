@@ -3,6 +3,7 @@ import 'package:auto_route/auto_route.dart';
 import '../../../../core/helpers/extensions/responsive_extensions.dart';
 import '../../../../core/routes/app_router.gr.dart';
 import '../models/concern_model.dart';
+import '../../../../cubit/theme_cubit.dart';
 
 class ConcernItem extends StatelessWidget {
   final ConcernModel concern;
@@ -19,7 +20,7 @@ class ConcernItem extends StatelessWidget {
         margin: EdgeInsets.only(bottom: context.scale(16)),
         padding: EdgeInsets.all(context.scale(16)),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: context.colors.textInverse,
           borderRadius: BorderRadius.circular(context.scale(20)),
           boxShadow: [
             BoxShadow(
@@ -40,7 +41,7 @@ class ConcernItem extends StatelessWidget {
                   style: TextStyle(
                     fontSize: context.scaleFont(12),
                     fontWeight: FontWeight.w600,
-                    color: const Color(0xFF5C6BC0), // Indigo based color
+                    color: context.colors.textTertiary, // Indigo based color
                     letterSpacing: 0.5,
                   ),
                 ),
@@ -53,7 +54,7 @@ class ConcernItem extends StatelessWidget {
               style: TextStyle(
                 fontSize: context.scaleFont(16),
                 fontWeight: FontWeight.bold,
-                color: Colors.black87,
+                color: Colors.black,
               ),
             ),
             SizedBox(height: context.scaleHeight(8)),
@@ -62,7 +63,7 @@ class ConcernItem extends StatelessWidget {
                 Icon(
                   _getDepartmentIcon(concern.department),
                   size: context.scale(16),
-                  color: const Color(0xFF5C6BC0),
+                  color: context.colors.textTertiary,
                 ),
                 SizedBox(width: context.scale(6)),
                 Text(
@@ -70,13 +71,16 @@ class ConcernItem extends StatelessWidget {
                   style: TextStyle(
                     fontSize: context.scaleFont(14),
                     fontWeight: FontWeight.w500,
-                    color: const Color(0xFF5C6BC0),
+                    color: context.colors.textTertiary,
                   ),
                 ),
               ],
             ),
             SizedBox(height: context.scaleHeight(16)),
-            Divider(color: Colors.grey.withValues(alpha: 0.1), height: 1),
+            Divider(
+              color: context.colors.textSecondary.withValues(alpha: 0.1),
+              height: 1,
+            ),
             SizedBox(height: context.scaleHeight(12)),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -86,14 +90,14 @@ class ConcernItem extends StatelessWidget {
                     Icon(
                       Icons.calendar_today_outlined,
                       size: context.scale(14),
-                      color: Colors.grey[500],
+                      color: context.colors.textSecondary,
                     ),
                     SizedBox(width: context.scale(6)),
                     Text(
                       _formatDate(concern.date),
                       style: TextStyle(
                         fontSize: context.scaleFont(12),
-                        color: Colors.grey[500],
+                        color: context.colors.textSecondary,
                       ),
                     ),
                   ],

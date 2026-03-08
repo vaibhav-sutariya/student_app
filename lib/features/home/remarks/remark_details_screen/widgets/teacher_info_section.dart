@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 
 import '../../../../../core/helpers/extensions/responsive_extensions.dart';
-
 
 /// Production-ready teacher information section widget
 /// Optimized for performance with const constructor
@@ -28,7 +28,7 @@ class TeacherInfoSection extends StatelessWidget {
           style: TextStyle(
             fontSize: context.scaleFont(11),
             fontWeight: FontWeight.w600,
-            color: Colors.grey[600],
+            color: context.colors.textSecondary,
             letterSpacing: 0.5,
           ),
         ),
@@ -42,7 +42,8 @@ class TeacherInfoSection extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(context.scale(30)),
                   child: CachedNetworkImage(
-                    imageUrl: teacherAvatarUrl ??
+                    imageUrl:
+                        teacherAvatarUrl ??
                         'https://i.pravatar.cc/150?u=teacher_jigna',
                     width: context.scale(60),
                     height: context.scale(60),
@@ -50,20 +51,20 @@ class TeacherInfoSection extends StatelessWidget {
                     placeholder: (context, url) => Container(
                       width: context.scale(60),
                       height: context.scale(60),
-                      color: Colors.grey[300],
+                      color: context.colors.textSecondary,
                       child: Icon(
                         Icons.person,
-                        color: Colors.grey[600],
+                        color: context.colors.textSecondary,
                         size: context.scale(30),
                       ),
                     ),
                     errorWidget: (context, url, error) => Container(
                       width: context.scale(60),
                       height: context.scale(60),
-                      color: Colors.grey[300],
+                      color: context.colors.textSecondary,
                       child: Icon(
                         Icons.person,
-                        color: Colors.grey[600],
+                        color: context.colors.textSecondary,
                         size: context.scale(30),
                       ),
                     ),
@@ -77,10 +78,10 @@ class TeacherInfoSection extends StatelessWidget {
                     width: context.scale(16),
                     height: context.scale(16),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF4CAF50),
+                      color: context.colors.success,
                       shape: BoxShape.circle,
                       border: Border.all(
-                        color: Colors.white,
+                        color: context.colors.textInverse,
                         width: 2,
                       ),
                     ),
@@ -99,7 +100,7 @@ class TeacherInfoSection extends StatelessWidget {
                     style: TextStyle(
                       fontSize: context.scaleFont(18),
                       fontWeight: FontWeight.w700,
-                      color: const Color(0xFF1A1A1A),
+                      color: Colors.black,
                     ),
                   ),
                   SizedBox(height: context.scaleHeight(4)),
@@ -108,7 +109,7 @@ class TeacherInfoSection extends StatelessWidget {
                     style: TextStyle(
                       fontSize: context.scaleFont(14),
                       fontWeight: FontWeight.w500,
-                      color: Colors.grey[700],
+                      color: context.colors.textSecondary,
                     ),
                   ),
                 ],

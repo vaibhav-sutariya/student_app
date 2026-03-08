@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/helpers/extensions/responsive_extensions.dart';
@@ -64,7 +65,7 @@ class _AddLeaveViewState extends State<_AddLeaveView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF5F5F5),
+      backgroundColor: context.colors.surface,
       appBar: const AppAppBar(title: 'Apply Leave'),
       body: BlocListener<AddLeaveBloc, AddLeaveState>(
         listener: (context, state) {
@@ -161,9 +162,9 @@ class _AddLeaveViewState extends State<_AddLeaveView> {
                         style: TextStyle(
                           fontSize: context.scaleFont(14),
                           fontWeight: FontWeight.w500,
-                          color: Colors.black87,
+                          color: Colors.black,
                         ),
-                        children: const [
+                        children: [
                           TextSpan(
                             text: ' *',
                             style: TextStyle(color: Colors.red),

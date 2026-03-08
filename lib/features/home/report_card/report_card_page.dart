@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/helpers/extensions/responsive_extensions.dart';
 import '../../../../core/widgets/app_app_bar.dart';
@@ -17,7 +18,7 @@ class ReportCardPage extends StatelessWidget {
     return BlocProvider(
       create: (context) => ReportCardBloc()..add(const LoadReportCards()),
       child: Scaffold(
-        backgroundColor: const Color(0xFFF5F5F7), // Light grey background
+        backgroundColor: context.colors.surface, // Light grey background
         appBar: const AppAppBar(
           title: 'Report Card',
           // Profile image logic would be here if available
@@ -54,7 +55,7 @@ class ReportCardPage extends StatelessWidget {
                     children: [
                       Icon(
                         Icons.assignment_turned_in_outlined,
-                        color: const Color(0xFF1A237E),
+                        color: Colors.black,
                         size: context.scale(20),
                       ),
                       SizedBox(width: context.scale(8)),
@@ -63,7 +64,7 @@ class ReportCardPage extends StatelessWidget {
                         style: TextStyle(
                           fontSize: context.scaleFont(16),
                           fontWeight: FontWeight.bold,
-                          color: const Color(0xFF1A237E),
+                          color: Colors.black,
                         ),
                       ),
                     ],
@@ -80,7 +81,7 @@ class ReportCardPage extends StatelessWidget {
                           children: [
                             Icon(
                               Icons.verified,
-                              color: Colors.grey[400],
+                              color: context.colors.textSecondary,
                               size: context.scale(16),
                             ),
                             SizedBox(width: context.scale(4)),
@@ -90,7 +91,7 @@ class ReportCardPage extends StatelessWidget {
                                 fontSize: context.scaleFont(10),
                                 fontWeight: FontWeight.bold,
                                 letterSpacing: 1.2,
-                                color: Colors.grey[400],
+                                color: context.colors.textSecondary,
                               ),
                             ),
                           ],
@@ -102,7 +103,7 @@ class ReportCardPage extends StatelessWidget {
                           style: TextStyle(
                             fontSize: context.scaleFont(10),
                             fontStyle: FontStyle.italic,
-                            color: Colors.grey[500],
+                            color: context.colors.textSecondary,
                           ),
                         ),
                       ],
@@ -125,7 +126,10 @@ class ReportCardPage extends StatelessWidget {
       );
     } else if (state is ReportCardError) {
       return Center(
-        child: Text(state.message, style: const TextStyle(color: Colors.red)),
+        child: Text(
+          state.message,
+          style: TextStyle(color: context.colors.textError),
+        ),
       );
     } else if (state is ReportCardLoaded) {
       if (state.reportCards.isEmpty) {

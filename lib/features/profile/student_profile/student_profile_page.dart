@@ -5,7 +5,7 @@ import 'package:student_app/core/widgets/app_app_bar.dart';
 
 import '../../../../core/helpers/extensions/responsive_extensions.dart';
 import '../../../../core/widgets/app_loader.dart';
-import '../../../../cubit/theme_cubit.dart';
+import '../../../cubit/theme_cubit.dart';
 import 'bloc/student_profile_bloc.dart';
 import 'bloc/student_profile_event.dart';
 import 'bloc/student_profile_state.dart';
@@ -78,7 +78,7 @@ class StudentProfilePage extends StatelessWidget {
                       profile.name,
                       style: context.textTheme.headlineMedium?.copyWith(
                         fontWeight: FontWeight.bold,
-                        color: context.colors.surface900,
+                        color: Colors.black,
                         fontSize: context.scaleFont(24),
                       ),
                     ),
@@ -130,7 +130,7 @@ class StudentProfilePage extends StatelessWidget {
                       child: Text(
                         profile.aboutMe,
                         style: context.textTheme.bodyMedium?.copyWith(
-                          color: context.colors.surface600,
+                          color: context.colors.textSecondary,
                           fontStyle: FontStyle.italic,
                           height: 1.5,
                           fontSize: context.scaleFont(14),
@@ -309,7 +309,7 @@ class StudentProfilePage extends StatelessWidget {
                                   ),
                                   child: Icon(
                                     Icons.assignment_ind_rounded,
-                                    color: context.colors.surface400,
+                                    color: context.colors.textTertiary,
                                   ),
                                 ),
                                 SizedBox(width: context.scale(12)),
@@ -333,7 +333,7 @@ class StudentProfilePage extends StatelessWidget {
                                         doc.number,
                                         style: context.textTheme.bodyMedium
                                             ?.copyWith(
-                                              color: context.colors.surface900,
+                                              color: Colors.black,
                                               fontWeight: FontWeight.w500,
                                             ),
                                       ),
@@ -342,7 +342,7 @@ class StudentProfilePage extends StatelessWidget {
                                 ),
                                 Icon(
                                   Icons.chevron_right_rounded,
-                                  color: context.colors.surface400,
+                                  color: context.colors.textTertiary,
                                 ),
                               ],
                             ),
@@ -374,7 +374,7 @@ class StudentProfilePage extends StatelessWidget {
         Text(
           label,
           style: context.textTheme.labelSmall?.copyWith(
-            color: context.colors.surface400,
+            color: context.colors.textTertiary,
             fontWeight: FontWeight.w600,
             fontSize: context.scaleFont(11),
           ),
@@ -410,7 +410,7 @@ class StudentProfilePage extends StatelessWidget {
             color: context.colors.surface100,
             borderRadius: BorderRadius.circular(8),
           ),
-          child: Icon(icon, color: context.colors.surface400),
+          child: Icon(icon, color: context.colors.textTertiary),
         ),
         SizedBox(width: context.scale(12)),
         Expanded(
@@ -420,7 +420,7 @@ class StudentProfilePage extends StatelessWidget {
               Text(
                 label,
                 style: context.textTheme.labelSmall?.copyWith(
-                  color: context.colors.surface400,
+                  color: context.colors.textTertiary,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -428,7 +428,7 @@ class StudentProfilePage extends StatelessWidget {
               Text(
                 value,
                 style: context.textTheme.bodyMedium?.copyWith(
-                  color: context.colors.surface900,
+                  color: Colors.black,
                   fontWeight: FontWeight.w500,
                   fontSize: context.scaleFont(13),
                 ),
@@ -458,7 +458,7 @@ class StudentProfilePage extends StatelessWidget {
           Text(
             label,
             style: context.textTheme.labelSmall?.copyWith(
-              color: context.colors.surface400,
+              color: context.colors.textTertiary,
               fontWeight: FontWeight.w600,
               fontSize: context.scaleFont(11),
             ),
@@ -480,7 +480,7 @@ class StudentProfilePage extends StatelessWidget {
                 child: Text(
                   value,
                   style: context.textTheme.bodyMedium?.copyWith(
-                    color: context.colors.surface900,
+                    color: Colors.black,
                     fontWeight: FontWeight.w600,
                     fontSize: context.scaleFont(13),
                   ),

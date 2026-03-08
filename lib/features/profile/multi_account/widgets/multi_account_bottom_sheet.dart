@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:student_app/core/routes/app_router.gr.dart';
 import '../../../../../core/helpers/extensions/responsive_extensions.dart';
-import '../../../../../cubit/theme_cubit.dart';
+import '../../../../cubit/theme_cubit.dart';
 import '../bloc/multi_account_bloc.dart';
 import '../bloc/multi_account_event.dart';
 import '../bloc/multi_account_state.dart';
@@ -48,7 +48,7 @@ class MultiAccountBottomSheet extends StatelessWidget {
             'Switch Account',
             style: context.textTheme.titleLarge?.copyWith(
               fontWeight: FontWeight.bold,
-              color: context.colors.surface900,
+              color: Colors.black,
             ),
           ),
           SizedBox(height: context.scaleHeight(16)),
@@ -121,14 +121,20 @@ class MultiAccountBottomSheet extends StatelessWidget {
                       placeholder: (context, url) => Container(
                         width: context.scale(48),
                         height: context.scale(48),
-                        color: Colors.grey[300],
-                        child: Icon(Icons.person, color: Colors.grey[600]),
+                        color: context.colors.textSecondary,
+                        child: Icon(
+                          Icons.person,
+                          color: context.colors.textSecondary,
+                        ),
                       ),
                       errorWidget: (context, url, error) => Container(
                         width: context.scale(48),
                         height: context.scale(48),
-                        color: Colors.grey[300],
-                        child: Icon(Icons.person, color: Colors.grey[600]),
+                        color: context.colors.textSecondary,
+                        child: Icon(
+                          Icons.person,
+                          color: context.colors.textSecondary,
+                        ),
                       ),
                     )
                   : CircleAvatar(
@@ -158,7 +164,7 @@ class MultiAccountBottomSheet extends StatelessWidget {
                   Text(
                     '${account.role} • ${account.email}',
                     style: context.textTheme.bodySmall?.copyWith(
-                      color: context.colors.surface500,
+                      color: context.colors.textSecondary,
                     ),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,

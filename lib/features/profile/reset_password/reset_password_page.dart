@@ -70,7 +70,7 @@ class ResetPasswordView extends StatelessWidget {
               Text(
                 'Your new password must be different from previous used passwords.',
                 style: context.textTheme.bodyMedium?.copyWith(
-                  color: context.colors.surface500,
+                  color: context.colors.textSecondary,
                   height: 1.5,
                 ),
                 textAlign: TextAlign.center,
@@ -153,8 +153,8 @@ class ResetPasswordView extends StatelessWidget {
                         ? SizedBox(
                             width: context.scale(24),
                             height: context.scale(24),
-                            child: const CircularProgressIndicator(
-                              color: Colors.white,
+                            child: CircularProgressIndicator(
+                              color: context.colors.textInverse,
                               strokeWidth: 2.5,
                             ),
                           )

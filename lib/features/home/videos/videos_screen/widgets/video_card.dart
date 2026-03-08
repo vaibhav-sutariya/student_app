@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import '../../../../../cubit/theme_cubit.dart';
 
 import '../../../../../core/helpers/extensions/responsive_extensions.dart';
 import '../../../../../core/widgets/app_loader.dart';
@@ -72,7 +73,7 @@ class _VideoCardState extends State<VideoCard>
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(context.scale(16)),
-              color: Colors.white,
+              color: context.colors.textInverse,
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withValues(alpha: 0.08),
@@ -124,7 +125,10 @@ class _VideoCardState extends State<VideoCard>
               ),
             ),
             child: Center(
-              child: AppLoader(strokeWidth: 2.5, color: Colors.grey[500]),
+              child: AppLoader(
+                strokeWidth: 2.5,
+                color: context.colors.textSecondary,
+              ),
             ),
           ),
           errorWidget: (context, url, error) => Container(
@@ -137,7 +141,7 @@ class _VideoCardState extends State<VideoCard>
             ),
             child: Icon(
               Icons.video_library_outlined,
-              color: Colors.grey[400],
+              color: context.colors.textSecondary,
               size: context.scale(40),
             ),
           ),
@@ -168,7 +172,7 @@ class _VideoCardState extends State<VideoCard>
           child: Container(
             padding: EdgeInsets.all(context.scale(12)),
             decoration: BoxDecoration(
-              color: Colors.white.withValues(alpha: 0.9),
+              color: context.colors.textInverse.withValues(alpha: 0.9),
               shape: BoxShape.circle,
             ),
             child: Icon(
@@ -186,7 +190,7 @@ class _VideoCardState extends State<VideoCard>
     return Container(
       padding: EdgeInsets.all(context.scale(14)),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: context.colors.textInverse,
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(context.scale(16)),
           bottomRight: Radius.circular(context.scale(16)),
@@ -202,7 +206,7 @@ class _VideoCardState extends State<VideoCard>
             style: TextStyle(
               fontSize: context.scaleFont(15),
               fontWeight: FontWeight.w700,
-              color: const Color(0xFF1A1A1A),
+              color: Colors.black,
               letterSpacing: -0.2,
               height: 1.3,
             ),
@@ -216,7 +220,7 @@ class _VideoCardState extends State<VideoCard>
               Icon(
                 Icons.video_library_outlined,
                 size: context.scale(14),
-                color: Colors.grey[600],
+                color: context.colors.textSecondary,
               ),
               SizedBox(width: context.scale(6)),
               Text(
@@ -224,7 +228,7 @@ class _VideoCardState extends State<VideoCard>
                 style: TextStyle(
                   fontSize: context.scaleFont(12),
                   fontWeight: FontWeight.w500,
-                  color: Colors.grey[600],
+                  color: context.colors.textSecondary,
                   letterSpacing: 0.2,
                 ),
               ),

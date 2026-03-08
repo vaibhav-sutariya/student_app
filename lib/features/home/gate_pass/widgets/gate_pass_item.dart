@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/helpers/extensions/responsive_extensions.dart';
 import '../models/gate_pass_model.dart';
 import 'package:intl/intl.dart';
+import '../../../../cubit/theme_cubit.dart';
 
 class GatePassItem extends StatelessWidget {
   final GatePassModel gatePass;
@@ -14,7 +15,7 @@ class GatePassItem extends StatelessWidget {
       margin: EdgeInsets.only(bottom: context.scale(16)),
       padding: EdgeInsets.all(context.scale(16)),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: context.colors.textInverse,
         borderRadius: BorderRadius.circular(context.scale(16)),
         boxShadow: [
           BoxShadow(
@@ -35,7 +36,7 @@ class GatePassItem extends StatelessWidget {
                 style: TextStyle(
                   fontSize: context.scaleFont(12),
                   fontWeight: FontWeight.w600,
-                  color: const Color(0xFF5C6BC0),
+                  color: context.colors.textTertiary,
                   letterSpacing: 0.5,
                 ),
               ),
@@ -59,7 +60,10 @@ class GatePassItem extends StatelessWidget {
             isMultiLine: true,
           ),
           SizedBox(height: context.scaleHeight(16)),
-          Divider(color: Colors.grey.withValues(alpha: 0.1), height: 1),
+          Divider(
+            color: context.colors.textSecondary.withValues(alpha: 0.1),
+            height: 1,
+          ),
           SizedBox(height: context.scaleHeight(12)),
 
           Row(
@@ -71,14 +75,14 @@ class GatePassItem extends StatelessWidget {
                     Icon(
                       Icons.calendar_today_outlined,
                       size: context.scale(14),
-                      color: Colors.grey[500],
+                      color: context.colors.textSecondary,
                     ),
                     SizedBox(width: context.scale(6)),
                     Text(
                       DateFormat('MMM dd, yyyy').format(gatePass.date),
                       style: TextStyle(
                         fontSize: context.scaleFont(12),
-                        color: Colors.grey[500],
+                        color: context.colors.textSecondary,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -90,14 +94,14 @@ class GatePassItem extends StatelessWidget {
                   Icon(
                     Icons.access_time,
                     size: context.scale(14),
-                    color: Colors.grey[500],
+                    color: context.colors.textSecondary,
                   ),
                   SizedBox(width: context.scale(6)),
                   Text(
                     gatePass.formattedTime,
                     style: TextStyle(
                       fontSize: context.scaleFont(12),
-                      color: Colors.grey[500],
+                      color: context.colors.textSecondary,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -141,7 +145,7 @@ class GatePassItem extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Icon(icon, size: context.scale(16), color: const Color(0xFF5C6BC0)),
+        Icon(icon, size: context.scale(16), color: context.colors.textTertiary),
         SizedBox(width: context.scale(8)),
         Expanded(
           child: RichText(
@@ -152,7 +156,7 @@ class GatePassItem extends StatelessWidget {
                   style: TextStyle(
                     fontSize: context.scaleFont(13),
                     fontWeight: FontWeight.w500,
-                    color: Colors.grey[600],
+                    color: context.colors.textSecondary,
                     fontFamily: 'Manrope', // Assuming font family
                   ),
                 ),
@@ -161,7 +165,7 @@ class GatePassItem extends StatelessWidget {
                   style: TextStyle(
                     fontSize: context.scaleFont(13),
                     fontWeight: FontWeight.bold,
-                    color: Colors.black87,
+                    color: Colors.black,
                     fontFamily: 'Manrope',
                   ),
                 ),

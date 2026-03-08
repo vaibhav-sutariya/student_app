@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 
 import '../../../../core/helpers/extensions/responsive_extensions.dart';
 import '../models/meal_menu_model.dart';
@@ -13,7 +14,7 @@ class MealMenuCard extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: context.scaleHeight(16)),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: context.colors.textInverse,
         borderRadius: BorderRadius.circular(context.scale(16)),
         boxShadow: [
           BoxShadow(
@@ -92,7 +93,7 @@ class MealMenuCard extends StatelessWidget {
               width: context.scale(48),
               height: context.scale(48),
               decoration: BoxDecoration(
-                color: const Color(0xFFF8F9FA), // Very light grey bg
+                color: context.colors.surface, // Very light grey bg
                 shape: BoxShape.circle,
               ),
               child: Center(
@@ -114,11 +115,11 @@ class MealMenuCard extends StatelessWidget {
       case MealType.breakfast:
         return const Color(0xFF5C6BC0); // Indigo
       case MealType.lunch:
-        return const Color(0xFF66BB6A); // Green
+        return context.colors.success; // Green
       case MealType.snacks:
-        return const Color(0xFFFFA726); // Orange
+        return context.colors.warning; // Orange
       case MealType.dinner:
-        return const Color(0xFFEF5350); // Red
+        return context.colors.error; // Red
     }
   }
 

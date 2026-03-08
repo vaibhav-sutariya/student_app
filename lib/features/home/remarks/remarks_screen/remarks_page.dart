@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/helpers/extensions/responsive_extensions.dart';
@@ -7,7 +8,6 @@ import '../../../../core/widgets/app_app_bar.dart';
 import '../../../../core/widgets/app_loader.dart';
 import '../../../../core/widgets/end_of_list_indicator.dart';
 import '../../../../core/widgets/error_state.dart';
-import '../../../../cubit/theme_cubit.dart';
 import 'bloc/remark_bloc.dart';
 import 'bloc/remark_event.dart';
 import 'bloc/remark_state.dart';
@@ -36,7 +36,7 @@ class _RemarksPageContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF5F5F5),
+      backgroundColor: context.colors.surface,
       appBar: AppAppBar(
         title: 'Remarks',
         profileImageUrl: 'https://i.pravatar.cc/150?u=a042581f4e29026024d',
@@ -67,7 +67,7 @@ class _FilterFAB extends StatelessWidget {
           backgroundColor: context.colors.primary,
           child: Stack(
             children: [
-              const Icon(Icons.filter_list, color: Colors.white),
+              Icon(Icons.filter_list, color: context.colors.textInverse),
               if (hasActiveFilters)
                 Positioned(
                   right: 0,
@@ -75,8 +75,8 @@ class _FilterFAB extends StatelessWidget {
                   child: Container(
                     width: 12,
                     height: 12,
-                    decoration: const BoxDecoration(
-                      color: Colors.red,
+                    decoration: BoxDecoration(
+                      color: context.colors.textError,
                       shape: BoxShape.circle,
                     ),
                   ),
@@ -176,14 +176,14 @@ class _RemarksContent extends StatelessWidget {
                           Icon(
                             Icons.comment_outlined,
                             size: context.scale(64),
-                            color: Colors.grey[400],
+                            color: context.colors.textSecondary,
                           ),
                           SizedBox(height: context.scaleHeight(16)),
                           Text(
                             'No remarks found',
                             style: TextStyle(
                               fontSize: context.scaleFont(16),
-                              color: Colors.grey[600],
+                              color: context.colors.textSecondary,
                             ),
                             textAlign: TextAlign.center,
                           ),
@@ -219,7 +219,7 @@ class _RemarksContent extends StatelessWidget {
               selector: (state) => state.isLoadingMore,
               builder: (context, isLoadingMore) {
                 if (!isLoadingMore) {
-                  return const SliverToBoxAdapter(child: SizedBox.shrink());
+                  return SliverToBoxAdapter(child: SizedBox.shrink());
                 }
                 return SliverToBoxAdapter(
                   child: Padding(
@@ -252,7 +252,7 @@ class _RemarksContent extends StatelessWidget {
                     ),
                   );
                 }
-                return const SliverToBoxAdapter(child: SizedBox.shrink());
+                return SliverToBoxAdapter(child: SizedBox.shrink());
               },
             ),
           ],

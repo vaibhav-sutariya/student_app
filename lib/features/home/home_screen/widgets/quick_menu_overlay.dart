@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../cubit/theme_cubit.dart';
 
 import '../../../../../core/helpers/extensions/responsive_extensions.dart';
 import '../cubit/home_search_cubit.dart';
@@ -25,10 +26,10 @@ class SmoothScrollPhysics extends ClampingScrollPhysics {
 
   @override
   SpringDescription get spring => const SpringDescription(
-        mass: 0.5, // Lower mass = faster response
-        stiffness: 100.0, // Lower stiffness = smoother deceleration
-        damping: 0.8, // Higher damping = less bounce
-      );
+    mass: 0.5, // Lower mass = faster response
+    stiffness: 100.0, // Lower stiffness = smoother deceleration
+    damping: 0.8, // Higher damping = less bounce
+  );
 }
 
 /// Production-ready optimized list overlay with minimal rebuilds
@@ -37,7 +38,11 @@ class QuickMenuOverlay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocSelector<HomeSearchCubit, HomeSearchState, List<MenuSectionData>>(
+    return BlocSelector<
+      HomeSearchCubit,
+      HomeSearchState,
+      List<MenuSectionData>
+    >(
       selector: (state) => state.filteredSections,
       builder: (context, sections) {
         return BlocSelector<HomeSearchCubit, HomeSearchState, bool>(
@@ -69,7 +74,7 @@ class _EmptyStateWidget extends StatelessWidget {
       child: Text(
         'No items found',
         style: TextStyle(
-          color: Colors.grey,
+          color: context.colors.textSecondary,
           fontSize: context.scaleFont(14),
         ),
       ),
@@ -81,10 +86,7 @@ class _EmptyStateWidget extends StatelessWidget {
 class _OptimizedMenuList extends StatelessWidget {
   final List<MenuSectionData> sections;
 
-  const _OptimizedMenuList({
-    super.key,
-    required this.sections,
-  });
+  const _OptimizedMenuList({super.key, required this.sections});
 
   @override
   Widget build(BuildContext context) {
@@ -113,10 +115,7 @@ class _OptimizedMenuList extends StatelessWidget {
           key: ObjectKey(section),
           child: Padding(
             padding: EdgeInsets.only(bottom: context.scaleHeight(5)),
-            child: MenuSectionCard(
-              title: section.title,
-              items: section.items,
-            ),
+            child: MenuSectionCard(title: section.title, items: section.items),
           ),
         );
       },

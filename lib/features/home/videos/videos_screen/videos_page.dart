@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/helpers/extensions/responsive_extensions.dart';
@@ -35,7 +36,7 @@ class _VideosPageContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF5F5F5),
+      backgroundColor: context.colors.surface,
       appBar: AppAppBar(
         title: 'Videos',
         profileImageUrl: 'https://i.pravatar.cc/150?u=a042581f4e29026024d',
@@ -127,14 +128,14 @@ class _VideosScrollView extends StatelessWidget {
                           Icon(
                             Icons.video_library_outlined,
                             size: context.scale(64),
-                            color: Colors.grey[400],
+                            color: context.colors.textSecondary,
                           ),
                           SizedBox(height: context.scaleHeight(16)),
                           Text(
                             'No video albums found',
                             style: TextStyle(
                               fontSize: context.scaleFont(16),
-                              color: Colors.grey[600],
+                              color: context.colors.textSecondary,
                             ),
                             textAlign: TextAlign.center,
                           ),

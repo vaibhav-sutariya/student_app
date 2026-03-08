@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/helpers/extensions/responsive_extensions.dart';
 import '../../../../core/utils/app_image_picker.dart';
@@ -100,7 +101,7 @@ class _AddConcernViewState extends State<AddConcernView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF5F5F7), // Light grey background
+      backgroundColor: context.colors.surface, // Light grey background
       appBar: const AppAppBar(title: 'Add Concern'),
       body: BlocListener<AddConcernBloc, AddConcernState>(
         listenWhen: (previous, current) => previous.status != current.status,
@@ -207,19 +208,19 @@ class _AddConcernViewState extends State<AddConcernView> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Text(
+                          Text(
                             'Submit Concern',
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                              color: context.colors.textInverse,
                             ),
                           ),
                           SizedBox(width: context.scale(8)),
                           Icon(
                             Icons.send_rounded,
                             size: context.scale(18),
-                            color: Colors.white,
+                            color: context.colors.textInverse,
                           ),
                         ],
                       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../cubit/theme_cubit.dart';
 
 class HolidayHwModel {
   final String id;
@@ -29,7 +30,7 @@ class HolidayHwModel {
         date: DateTime(2025, 12, 25),
         subject: 'Mathematics',
         type: 'WINTER HOLIDAY - ALGEBRA',
-        color: const Color(0xFF5C6BC0),
+        color: Colors.grey.shade400,
         pdfUrl: basePdfUrl,
       ),
       HolidayHwModel(
@@ -45,7 +46,7 @@ class HolidayHwModel {
         date: DateTime(2025, 11, 10),
         subject: 'English',
         type: 'DIWALI HOLIDAY - READING',
-        color: const Color(0xFFFF9800),
+        color: Colors.grey.shade400,
         pdfUrl: basePdfUrl,
       ),
       HolidayHwModel(
@@ -53,7 +54,7 @@ class HolidayHwModel {
         date: DateTime(2025, 10, 2),
         subject: 'History',
         type: 'GANDHI JAYANTI - PROJECT',
-        color: const Color(0xFFEC407A),
+        color: Colors.red,
         pdfUrl: basePdfUrl,
       ),
       HolidayHwModel(

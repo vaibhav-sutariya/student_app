@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/helpers/extensions/responsive_extensions.dart';
-import '../../../../../cubit/theme_cubit.dart';
+import '../../../../cubit/theme_cubit.dart';
 
 class ProfileMenuItem extends StatelessWidget {
   final IconData icon;
@@ -61,7 +61,7 @@ class ProfileMenuItem extends StatelessWidget {
               Icon(
                 Icons.arrow_forward_ios_rounded,
                 size: context.scale(16),
-                color: context.colors.surface400,
+                color: context.colors.textTertiary,
               ),
             ],
           ),

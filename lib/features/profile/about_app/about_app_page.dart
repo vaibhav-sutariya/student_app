@@ -66,7 +66,7 @@ class AboutAppPage extends StatelessWidget {
             Text(
               'Version 1.0.0',
               style: context.textTheme.titleMedium?.copyWith(
-                color: context.colors.surface600,
+                color: context.colors.textSecondary,
                 fontWeight: FontWeight.w500,
               ),
               textAlign: TextAlign.center,
@@ -98,7 +98,7 @@ class AboutAppPage extends StatelessWidget {
                           'Company Information',
                           style: context.textTheme.titleMedium?.copyWith(
                             fontWeight: FontWeight.bold,
-                            color: context.colors.surface900,
+                            color: Colors.black,
                           ),
                         ),
                       ),
@@ -116,7 +116,7 @@ class AboutAppPage extends StatelessWidget {
                   Text(
                     'We are dedicated to providing the best software solutions for educational institutions, ensuring smooth administration and enhanced learning experiences. Our innovative platform is designed to connect teachers, students, and parents seamlessly.',
                     style: context.textTheme.bodyMedium?.copyWith(
-                      color: context.colors.surface600,
+                      color: context.colors.textSecondary,
                       height: 1.5,
                     ),
                   ),
@@ -159,7 +159,7 @@ class AboutAppPage extends StatelessWidget {
             Text(
               '© ${DateTime.now().year} Shangar Darshan IT Solutions.\nAll rights reserved.',
               style: context.textTheme.bodySmall?.copyWith(
-                color: context.colors.surface400,
+                color: context.colors.textTertiary,
                 height: 1.5,
               ),
               textAlign: TextAlign.center,

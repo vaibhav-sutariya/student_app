@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../../cubit/theme_cubit.dart';
 
 import '../../../../../core/helpers/extensions/responsive_extensions.dart';
 import '../../../../../core/routes/app_router.gr.dart';
@@ -32,14 +33,14 @@ class ViewTab extends StatelessWidget {
                   Icon(
                     Icons.event_busy_outlined,
                     size: context.scale(64),
-                    color: Colors.grey.withValues(alpha: 0.5),
+                    color: context.colors.textSecondary.withValues(alpha: 0.5),
                   ),
                   SizedBox(height: context.scaleHeight(16)),
                   Text(
                     'No Leave Applications',
                     style: TextStyle(
                       fontSize: context.scaleFont(16),
-                      color: Colors.grey,
+                      color: context.colors.textSecondary,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -84,7 +85,7 @@ class ViewTab extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(context.scale(16)),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: context.colors.textInverse,
           borderRadius: BorderRadius.circular(context.scale(12)),
           boxShadow: [
             BoxShadow(
@@ -106,7 +107,7 @@ class ViewTab extends StatelessWidget {
                     style: TextStyle(
                       fontSize: context.scaleFont(14),
                       fontWeight: FontWeight.w600,
-                      color: Colors.black87,
+                      color: Colors.black,
                     ),
                   ),
                 ),
@@ -135,7 +136,7 @@ class ViewTab extends StatelessWidget {
               'Reason: ${leave.reason}',
               style: TextStyle(
                 fontSize: context.scaleFont(13),
-                color: Colors.grey[700],
+                color: context.colors.textSecondary,
               ),
             ),
           ],

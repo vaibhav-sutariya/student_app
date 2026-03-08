@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../core/helpers/extensions/responsive_extensions.dart';
 import '../models/calendar_event_model.dart';
+import '../../../cubit/theme_cubit.dart';
 
 class CalendarEventCard extends StatelessWidget {
   final CalendarEventModel event;
@@ -13,7 +14,7 @@ class CalendarEventCard extends StatelessWidget {
       margin: EdgeInsets.only(bottom: context.scale(16)),
       padding: EdgeInsets.all(context.scale(16)),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: context.colors.textInverse,
         borderRadius: BorderRadius.circular(context.scale(16)),
         boxShadow: [
           BoxShadow(
@@ -49,7 +50,7 @@ class CalendarEventCard extends StatelessWidget {
                   style: TextStyle(
                     fontSize: context.scaleFont(15),
                     fontWeight: FontWeight.bold,
-                    color: Colors.black87,
+                    color: Colors.black,
                   ),
                 ),
                 SizedBox(height: context.scaleHeight(6)),
@@ -59,7 +60,7 @@ class CalendarEventCard extends StatelessWidget {
                       Icon(
                         Icons.access_time,
                         size: context.scale(14),
-                        color: Colors.grey[500],
+                        color: context.colors.textSecondary,
                       ),
                       SizedBox(width: context.scale(4)),
                       Text(
@@ -68,7 +69,7 @@ class CalendarEventCard extends StatelessWidget {
                             : event.startTime,
                         style: TextStyle(
                           fontSize: context.scaleFont(12),
-                          color: Colors.grey[600],
+                          color: context.colors.textSecondary,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
@@ -81,7 +82,7 @@ class CalendarEventCard extends StatelessWidget {
                       Icon(
                         Icons.location_on_outlined,
                         size: context.scale(14),
-                        color: Colors.grey[500],
+                        color: context.colors.textSecondary,
                       ),
                       SizedBox(width: context.scale(4)),
                       Expanded(
@@ -89,7 +90,7 @@ class CalendarEventCard extends StatelessWidget {
                           event.location,
                           style: TextStyle(
                             fontSize: context.scaleFont(12),
-                            color: Colors.grey[600],
+                            color: context.colors.textSecondary,
                             fontWeight: FontWeight.w500,
                           ),
                           maxLines: 1,
@@ -104,7 +105,7 @@ class CalendarEventCard extends StatelessWidget {
                   event.description,
                   style: TextStyle(
                     fontSize: context.scaleFont(13),
-                    color: Colors.grey[700],
+                    color: context.colors.textSecondary,
                     height: 1.4,
                   ),
                 ),

@@ -66,11 +66,11 @@ class _AppTextFieldState extends State<AppTextField> {
     final theme = Theme.of(context);
     final inputDecorationTheme = theme.inputDecorationTheme;
 
-    // Standard Reference Color from NewPasswordPage: Color(0xFFF8F9FB)
+    // Standard Reference Color from NewPasswordPage: context.colors.surface
     final effectiveColor =
         widget.fillColor ??
         inputDecorationTheme.fillColor ??
-        const Color(0xFFF8F9FB);
+        context.colors.surface;
 
     return TextFormField(
       key: _fieldKey,

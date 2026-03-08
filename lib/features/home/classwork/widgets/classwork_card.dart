@@ -15,7 +15,7 @@ class ClassworkCard extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: context.scaleHeight(16)),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: context.colors.textInverse,
         borderRadius: BorderRadius.circular(context.scale(12)),
         boxShadow: [
           BoxShadow(
@@ -54,7 +54,7 @@ class ClassworkCard extends StatelessWidget {
             ),
             SizedBox(height: context.scaleHeight(12)),
 
-            Divider(color: Colors.grey.withValues(alpha: 0.1)),
+            Divider(color: context.colors.textSecondary.withValues(alpha: 0.1)),
             SizedBox(height: context.scaleHeight(12)),
 
             // Description
@@ -73,7 +73,9 @@ class ClassworkCard extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(context.scale(12)),
                 decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey.withValues(alpha: 0.2)),
+                  border: Border.all(
+                    color: context.colors.textSecondary.withValues(alpha: 0.2),
+                  ),
                   borderRadius: BorderRadius.circular(context.scale(12)),
                 ),
                 // Dashed border is complex in Flutter without external package, simpler border for now or CustomPainter
@@ -86,12 +88,12 @@ class ClassworkCard extends StatelessWidget {
                     Container(
                       padding: EdgeInsets.all(context.scale(8)),
                       decoration: BoxDecoration(
-                        color: Colors.red.withValues(alpha: 0.1),
+                        color: context.colors.textError.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(context.scale(8)),
                       ),
                       child: Icon(
                         Icons.picture_as_pdf,
-                        color: Colors.red,
+                        color: context.colors.textError,
                         size: context.scale(24),
                       ),
                     ),

@@ -57,7 +57,7 @@ class SummaryPage extends StatelessWidget {
                         child: Text(
                           'Top picks from Adademics',
                           style: context.textTheme.titleLarge?.copyWith(
-                            color: context.colors.surface900,
+                            color: Colors.black,
                             fontWeight: FontWeight.bold,
                           ),
                         ),

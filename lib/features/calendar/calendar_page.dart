@@ -10,6 +10,7 @@ import 'bloc/calendar_bloc.dart';
 import 'bloc/calendar_event.dart';
 import 'bloc/calendar_state.dart';
 import 'widgets/calendar_event_card.dart';
+import '../../cubit/theme_cubit.dart';
 
 @RoutePage()
 class CalendarPage extends StatelessWidget {
@@ -181,12 +182,12 @@ class _EventListSection extends StatelessWidget {
                       Icon(
                         Icons.event_available,
                         size: 48,
-                        color: Colors.grey[300],
+                        color: context.colors.textSecondary,
                       ),
                       const SizedBox(height: 16),
                       Text(
                         "No events for this day",
-                        style: TextStyle(color: Colors.grey[500]),
+                        style: TextStyle(color: context.colors.textSecondary),
                       ),
                     ],
                   ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 
 import '../../../../../core/helpers/extensions/responsive_extensions.dart';
-
 
 /// Production-ready action required card widget
 /// Optimized for performance with const constructor
@@ -37,7 +37,7 @@ class ActionRequiredCard extends StatelessWidget {
                 style: TextStyle(
                   fontSize: context.scale(120),
                   fontWeight: FontWeight.w900,
-                  color: Colors.red[900],
+                  color: context.colors.textError,
                 ),
               ),
             ),
@@ -49,12 +49,12 @@ class ActionRequiredCard extends StatelessWidget {
               Container(
                 padding: EdgeInsets.all(context.scale(8)),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFE53935),
+                  color: context.colors.error,
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
                   Icons.info_outline,
-                  color: Colors.white,
+                  color: context.colors.textInverse,
                   size: context.scale(20),
                 ),
               ),
@@ -68,7 +68,7 @@ class ActionRequiredCard extends StatelessWidget {
                       style: TextStyle(
                         fontSize: context.scaleFont(11),
                         fontWeight: FontWeight.w700,
-                        color: const Color(0xFFE53935),
+                        color: context.colors.error,
                         letterSpacing: 0.5,
                       ),
                     ),
@@ -78,7 +78,7 @@ class ActionRequiredCard extends StatelessWidget {
                       style: TextStyle(
                         fontSize: context.scaleFont(16),
                         fontWeight: FontWeight.w700,
-                        color: const Color(0xFF1A1A1A),
+                        color: Colors.black,
                       ),
                     ),
                   ],

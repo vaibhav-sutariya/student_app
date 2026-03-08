@@ -258,7 +258,7 @@ class ProfilePage extends StatelessWidget {
                               Text(
                                 'App Version : 1.0.0',
                                 style: context.textTheme.bodyMedium?.copyWith(
-                                  color: context.colors.surface500,
+                                  color: context.colors.textSecondary,
                                 ),
                               ),
                               SizedBox(height: context.scaleHeight(40)),

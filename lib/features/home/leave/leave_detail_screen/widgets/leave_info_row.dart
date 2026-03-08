@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../../cubit/theme_cubit.dart';
 
 import '../../../../../core/helpers/extensions/responsive_extensions.dart';
 
@@ -49,7 +50,7 @@ class LeaveInfoRow extends StatelessWidget {
                     label,
                     style: TextStyle(
                       fontSize: context.scaleFont(13),
-                      color: Colors.grey[700],
+                      color: context.colors.textSecondary,
                     ),
                   ),
                   Text(
@@ -57,7 +58,7 @@ class LeaveInfoRow extends StatelessWidget {
                     style: TextStyle(
                       fontSize: context.scaleFont(13),
                       fontWeight: FontWeight.w600,
-                      color: Colors.black87,
+                      color: Colors.black,
                     ),
                   ),
                 ],

@@ -8,11 +8,7 @@ class AttendanceFeedbackCard extends StatelessWidget {
   final String message;
   final String? title;
 
-  const AttendanceFeedbackCard({
-    super.key,
-    required this.message,
-    this.title,
-  });
+  const AttendanceFeedbackCard({super.key, required this.message, this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +34,7 @@ class AttendanceFeedbackCard extends StatelessWidget {
                 ),
                 child: Icon(
                   Icons.trending_up,
-                  color: Colors.white,
+                  color: context.colors.textInverse,
                   size: context.scale(24),
                 ),
               ),
@@ -62,7 +58,7 @@ class AttendanceFeedbackCard extends StatelessWidget {
                       message,
                       style: TextStyle(
                         fontSize: context.scaleFont(13),
-                        color: Colors.grey[800],
+                        color: context.colors.textSecondary,
                       ),
                     ),
                   ],

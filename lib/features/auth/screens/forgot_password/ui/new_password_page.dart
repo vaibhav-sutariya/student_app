@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 import 'package:student_app/core/routes/app_router.gr.dart';
 
 import '../../../../../core/widgets/app_primary_button.dart';
 import '../../../../../core/widgets/app_text_field.dart';
-import '../../../../../cubit/theme_cubit.dart';
 import '../../../common/auth_header.dart';
 
 @RoutePage()
@@ -64,9 +64,11 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
             Expanded(
               child: Container(
                 width: double.infinity,
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
+                decoration: BoxDecoration(
+                  color: context.colors.textInverse,
+                  borderRadius: const BorderRadius.vertical(
+                    top: Radius.circular(30),
+                  ),
                 ),
                 padding: const EdgeInsets.all(24),
                 child: SafeArea(
@@ -88,13 +90,13 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                           'Set a strong password to protect your\nschool management account.',
                           style: TextStyle(
                             fontSize: 14,
-                            color: Colors.grey[600],
+                            color: context.colors.textSecondary,
                             height: 1.5,
                           ),
                         ),
                         const SizedBox(height: 32),
 
-                        const Text(
+                        Text(
                           'New Password',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -112,7 +114,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
 
                         const SizedBox(height: 20),
 
-                        const Text(
+                        Text(
                           'Confirm New Password',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
@@ -134,18 +136,18 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                         Container(
                           padding: const EdgeInsets.all(16),
                           decoration: BoxDecoration(
-                            color: const Color(0xFFF8F9FB),
+                            color: context.colors.surface,
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Text(
+                              Text(
                                 'PASSWORD REQUIREMENTS',
                                 style: TextStyle(
                                   fontSize: 10,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.grey,
+                                  color: context.colors.textSecondary,
                                   letterSpacing: 1.0,
                                 ),
                               ),
@@ -180,7 +182,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                             }
                           },
                           borderRadius: 16,
-                          child: const Row(
+                          child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
@@ -188,14 +190,14 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                                 style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
-                                  color: Colors.white,
+                                  color: context.colors.textInverse,
                                 ),
                               ),
-                              SizedBox(width: 8),
+                              const SizedBox(width: 8),
                               Icon(
                                 Icons.cached_rounded,
                                 size: 18,
-                                color: Colors.white,
+                                color: context.colors.textInverse,
                               ),
                             ],
                           ),
@@ -226,7 +228,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
       obscureText: isObscured,
       prefixIcon: Icon(
         isConfirm ? Icons.lock_reset_rounded : Icons.lock_outline_rounded,
-        color: Colors.grey,
+        color: context.colors.textSecondary,
         size: 20,
       ),
       suffixIcon: IconButton(
@@ -234,12 +236,12 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
           isObscured
               ? Icons.visibility_off_outlined
               : Icons.visibility_outlined,
-          color: Colors.grey,
+          color: context.colors.textSecondary,
           size: 20,
         ),
         onPressed: onToggleVisibility,
       ),
-      fillColor: const Color(0xFFF8F9FB),
+      fillColor: context.colors.surface,
       borderSide:
           null, // Default border handling in widget or override here if needed, AppTextField defaults to greyish border
     );

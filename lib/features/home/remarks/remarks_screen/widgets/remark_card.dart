@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 import 'package:intl/intl.dart';
 
 import '../../../../../core/helpers/extensions/responsive_extensions.dart';
@@ -29,7 +30,7 @@ class RemarkCard extends StatelessWidget {
             bottom: context.scaleHeight(8),
           ),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: context.colors.textInverse,
             borderRadius: BorderRadius.circular(context.scale(12)),
             boxShadow: [
               BoxShadow(
@@ -61,8 +62,8 @@ class RemarkCard extends StatelessWidget {
   Widget _buildIcon(BuildContext context) {
     final isPositive = remark.type == RemarkType.positive;
     final iconColor = isPositive
-        ? const Color(0xFF4CAF50)
-        : const Color(0xFFE53935);
+        ? context.colors.success
+        : context.colors.error;
     final backgroundColor = isPositive
         ? const Color(0xFFE8F5E9)
         : const Color(0xFFFFEBEE);
@@ -115,8 +116,8 @@ class RemarkCard extends StatelessWidget {
   Widget _buildContent(BuildContext context) {
     final isPositive = remark.type == RemarkType.positive;
     final textColor = isPositive
-        ? const Color(0xFF4CAF50)
-        : const Color(0xFFE53935);
+        ? context.colors.success
+        : context.colors.error;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -132,7 +133,7 @@ class RemarkCard extends StatelessWidget {
                 _formatDate(remark.date),
                 style: TextStyle(
                   fontSize: context.scaleFont(12),
-                  color: Colors.grey[600],
+                  color: context.colors.textSecondary,
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -148,7 +149,7 @@ class RemarkCard extends StatelessWidget {
           style: TextStyle(
             fontSize: context.scaleFont(13),
             fontWeight: FontWeight.w700,
-            color: const Color(0xFF1A1A1A),
+            color: Colors.black,
             letterSpacing: 0.5,
           ),
         ),
@@ -185,7 +186,7 @@ class RemarkCard extends StatelessWidget {
         style: TextStyle(
           fontSize: context.scaleFont(10),
           fontWeight: FontWeight.w700,
-          color: isPositive ? const Color(0xFF2E7D32) : const Color(0xFFC62828),
+          color: isPositive ? context.colors.success : context.colors.error,
           letterSpacing: 0.5,
         ),
       ),

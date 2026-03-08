@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:student_app/core/routes/app_router.gr.dart';
 
 import '../../../../core/widgets/app_app_bar.dart';
 import '../../../../core/widgets/app_tab_bar.dart';
 import '../../../../core/widgets/month_calendar.dart';
-import '../../../../cubit/theme_cubit.dart';
 import 'bloc/leave_bloc.dart';
 import 'widgets/holiday_list_tab.dart';
 import 'widgets/view_tab.dart';
@@ -27,7 +27,7 @@ class LeavePage extends StatelessWidget {
     return BlocProvider(
       create: (context) => LeaveBloc()..add(LoadLeaveData()),
       child: Scaffold(
-        backgroundColor: const Color(0xFFF5F5F5),
+        backgroundColor: context.colors.surface,
         appBar: const AppAppBar(title: 'My Leave'),
         body: Column(
           children: [

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 
-import '../../cubit/theme_cubit.dart';
 import '../helpers/extensions/responsive_extensions.dart';
 
 /// Reusable dropdown field widget
@@ -82,7 +82,7 @@ class AppDropdownField<T> extends StatelessWidget {
               fontWeight: FontWeight.w500,
               color: Colors.black87,
             ),
-            fillColor: const Color(0xFFF8F9FB),
+            fillColor: context.colors.surface,
             filled: true,
             contentPadding: EdgeInsets.symmetric(
               horizontal: context.scale(16),

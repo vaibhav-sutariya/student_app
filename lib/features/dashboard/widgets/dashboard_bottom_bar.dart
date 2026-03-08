@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/helpers/extensions/responsive_extensions.dart';
-import '../../../../cubit/theme_cubit.dart';
+import '../../../cubit/theme_cubit.dart';
 
 class DashboardBottomBar extends StatelessWidget {
   final int activeIndex;
@@ -33,7 +33,7 @@ class DashboardBottomBar extends StatelessWidget {
                 context.scaleHeight(5),
               ),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: context.colors.textInverse,
                 borderRadius: BorderRadius.circular(context.scale(15)),
                 boxShadow: [
                   BoxShadow(
@@ -123,7 +123,7 @@ class DashboardBottomBar extends StatelessWidget {
                       // Highlight if selected
                       border: activeIndex == 0
                           ? Border.all(
-                              color: Colors.white,
+                              color: context.colors.textInverse,
                               width: context.scale(2),
                             )
                           : null,

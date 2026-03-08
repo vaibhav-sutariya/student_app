@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 
 import '../../../../../core/helpers/extensions/responsive_extensions.dart';
 
@@ -18,7 +19,7 @@ class LeaveStatusBadge extends StatelessWidget {
         vertical: context.scaleHeight(6),
       ),
       decoration: BoxDecoration(
-        color: _getBackgroundColor(),
+        color: _getBackgroundColor(context),
         borderRadius: BorderRadius.circular(context.scale(4)),
       ),
       child: Text(
@@ -26,14 +27,14 @@ class LeaveStatusBadge extends StatelessWidget {
         style: TextStyle(
           fontSize: context.scaleFont(11),
           fontWeight: FontWeight.bold,
-          color: _getTextColor(),
+          color: _getTextColor(context),
           letterSpacing: 0.5,
         ),
       ),
     );
   }
 
-  Color _getBackgroundColor() {
+  Color _getBackgroundColor(BuildContext context) {
     switch (status.toLowerCase()) {
       case 'approved':
         return const Color(0xFFE8F5E9);
@@ -42,18 +43,18 @@ class LeaveStatusBadge extends StatelessWidget {
       case 'rejected':
         return const Color(0xFFFFEBEE);
       default:
-        return const Color(0xFFF5F5F5);
+        return context.colors.surface;
     }
   }
 
-  Color _getTextColor() {
+  Color _getTextColor(BuildContext context) {
     switch (status.toLowerCase()) {
       case 'approved':
-        return const Color(0xFF2E7D32);
+        return context.colors.success;
       case 'pending':
-        return const Color(0xFFF57C00);
+        return context.colors.warning;
       case 'rejected':
-        return const Color(0xFFC62828);
+        return context.colors.error;
       default:
         return const Color(0xFF616161);
     }

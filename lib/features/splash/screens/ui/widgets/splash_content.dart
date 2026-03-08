@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../../cubit/theme_cubit.dart';
 
 import '../../../../../core/style/text_styles.dart';
 import '../../../../../gen/assets.gen.dart';
@@ -51,7 +52,7 @@ class SplashContent extends StatelessWidget {
                       'Powerful and Intuitive Education Management Software',
                       textAlign: TextAlign.center,
                       style: TextStyles.bodyMedium.copyWith(
-                        color: Colors.grey,
+                        color: context.colors.textSecondary,
                         height: 1.5,
                       ),
                     ),

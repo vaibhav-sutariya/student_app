@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/helpers/extensions/responsive_extensions.dart';
@@ -17,7 +18,7 @@ class AssignmentPage extends StatelessWidget {
     return BlocProvider(
       create: (context) => AssignmentBloc()..add(AssignmentLoaded()),
       child: Scaffold(
-        backgroundColor: const Color(0xFFF5F5F5),
+        backgroundColor: context.colors.surface,
         appBar: const AppAppBar(title: 'Assignment'),
         body: BlocBuilder<AssignmentBloc, AssignmentState>(
           builder: (context, state) {
@@ -32,14 +33,14 @@ class AssignmentPage extends StatelessWidget {
                       Icon(
                         Icons.assignment_outlined,
                         size: context.scale(64),
-                        color: Colors.grey.withOpacity(0.5),
+                        color: context.colors.textSecondary.withOpacity(0.5),
                       ),
                       SizedBox(height: context.scaleHeight(16)),
                       Text(
                         'No Assignments Available',
                         style: TextStyle(
                           fontSize: context.scaleFont(16),
-                          color: Colors.grey,
+                          color: context.colors.textSecondary,
                           fontWeight: FontWeight.w500,
                         ),
                       ),

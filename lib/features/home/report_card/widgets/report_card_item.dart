@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 import '../../../../core/helpers/extensions/responsive_extensions.dart';
 import '../models/report_card_model.dart';
 import 'package:auto_route/auto_route.dart';
@@ -19,7 +20,7 @@ class ReportCardItem extends StatelessWidget {
       margin: EdgeInsets.only(bottom: context.scale(16)),
       padding: EdgeInsets.all(context.scale(16)),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: context.colors.textInverse,
         borderRadius: BorderRadius.circular(context.scale(16)),
         boxShadow: [
           BoxShadow(
@@ -45,7 +46,7 @@ class ReportCardItem extends StatelessWidget {
                       style: TextStyle(
                         fontSize: context.scaleFont(16),
                         fontWeight: FontWeight.bold,
-                        color: Colors.black87,
+                        color: Colors.black,
                       ),
                     ),
                     SizedBox(height: context.scaleHeight(8)),
@@ -57,7 +58,7 @@ class ReportCardItem extends StatelessWidget {
                           '• ${report.date}',
                           style: TextStyle(
                             fontSize: context.scaleFont(12),
-                            color: Colors.grey[600],
+                            color: context.colors.textSecondary,
                           ),
                         ),
                       ],
@@ -74,7 +75,7 @@ class ReportCardItem extends StatelessWidget {
                       style: TextStyle(
                         fontSize: context.scaleFont(24),
                         fontWeight: FontWeight.bold,
-                        color: const Color(0xFF1A237E), // Deep Blue
+                        color: Colors.black, // Deep Blue
                       ),
                     ),
                     Text(
@@ -82,7 +83,7 @@ class ReportCardItem extends StatelessWidget {
                       style: TextStyle(
                         fontSize: context.scaleFont(8),
                         fontWeight: FontWeight.w600,
-                        color: Colors.grey[500],
+                        color: context.colors.textSecondary,
                       ),
                     ),
                   ],
@@ -128,7 +129,7 @@ class ReportCardItem extends StatelessWidget {
                 width: context.scale(44),
                 height: context.scale(44),
                 decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey.shade300),
+                  border: Border.all(color: context.colors.textTertiary),
                   borderRadius: BorderRadius.circular(context.scale(12)),
                 ),
                 child: IconButton(
@@ -137,7 +138,7 @@ class ReportCardItem extends StatelessWidget {
                   },
                   icon: Icon(
                     Icons.download_rounded,
-                    color: Colors.grey[700],
+                    color: context.colors.textSecondary,
                     size: context.scale(20),
                   ),
                 ),
@@ -164,7 +165,7 @@ class ReportCardItem extends StatelessWidget {
         style: TextStyle(
           fontSize: context.scaleFont(10),
           fontWeight: FontWeight.bold,
-          color: const Color(0xFF2E7D32), // Dark Green
+          color: context.colors.success, // Dark Green
         ),
       ),
     );
@@ -175,10 +176,10 @@ class ReportCardItem extends StatelessWidget {
       margin: EdgeInsets.only(bottom: context.scale(16)),
       padding: EdgeInsets.all(context.scale(16)),
       decoration: BoxDecoration(
-        color: const Color(0xFFF8F9FA), // Very light grey
+        color: context.colors.surface, // Very light grey
         borderRadius: BorderRadius.circular(context.scale(16)),
         border: Border.all(
-          color: Colors.grey.withValues(alpha: 0.2),
+          color: context.colors.textSecondary.withValues(alpha: 0.2),
           style: BorderStyle.solid,
         ),
       ),
@@ -192,7 +193,7 @@ class ReportCardItem extends StatelessWidget {
                 style: TextStyle(
                   fontSize: context.scaleFont(16),
                   fontWeight: FontWeight.bold,
-                  color: Colors.grey[600],
+                  color: context.colors.textSecondary,
                 ),
               ),
               SizedBox(height: context.scaleHeight(8)),
@@ -202,7 +203,7 @@ class ReportCardItem extends StatelessWidget {
                   vertical: context.scale(4),
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.grey[200],
+                  color: context.colors.textSecondary,
                   borderRadius: BorderRadius.circular(context.scale(4)),
                 ),
                 child: Text(
@@ -210,7 +211,7 @@ class ReportCardItem extends StatelessWidget {
                   style: TextStyle(
                     fontSize: context.scaleFont(10),
                     fontWeight: FontWeight.bold,
-                    color: Colors.grey[600],
+                    color: context.colors.textSecondary,
                   ),
                 ),
               ),
@@ -219,7 +220,7 @@ class ReportCardItem extends StatelessWidget {
                 report.lockMessage ?? '',
                 style: TextStyle(
                   fontSize: context.scaleFont(12),
-                  color: Colors.grey[500],
+                  color: context.colors.textSecondary,
                   height: 1.4,
                 ),
               ),
@@ -231,7 +232,7 @@ class ReportCardItem extends StatelessWidget {
             child: Icon(
               Icons.lock_clock_outlined,
               size: context.scale(48),
-              color: Colors.grey.withValues(alpha: 0.2),
+              color: context.colors.textSecondary.withValues(alpha: 0.2),
             ),
           ),
         ],

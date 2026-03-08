@@ -141,11 +141,11 @@ class _AttendanceCalendarState extends State<AttendanceCalendar> {
   Color _getStatusColor(AttendanceStatus status) {
     switch (status) {
       case AttendanceStatus.present:
-        return const Color(0xFF4CAF50); // Green
+        return context.colors.success; // Green
       case AttendanceStatus.absent:
-        return const Color(0xFFF44336); // Red
+        return context.colors.error; // Red
       case AttendanceStatus.holiday:
-        return const Color(0xFFFF9800); // Orange
+        return context.colors.warning; // Orange
       case AttendanceStatus.notMarked:
         return Colors.transparent;
     }
@@ -440,21 +440,21 @@ class _AttendanceCalendarState extends State<AttendanceCalendar> {
       children: [
         _buildLegendItem(
           context,
-          const Color(0xFF4CAF50),
+          context.colors.success,
           'PRESENT',
           legendTextStyle,
         ),
         SizedBox(width: context.scale(16)),
         _buildLegendItem(
           context,
-          const Color(0xFFF44336),
+          context.colors.error,
           'ABSENT',
           legendTextStyle,
         ),
         SizedBox(width: context.scale(16)),
         _buildLegendItem(
           context,
-          const Color(0xFFFF9800),
+          context.colors.warning,
           'HOLIDAY',
           legendTextStyle,
         ),

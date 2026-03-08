@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/helpers/extensions/responsive_extensions.dart';
@@ -19,7 +20,7 @@ class HomeworkPage extends StatelessWidget {
     return BlocProvider(
       create: (context) => HomeworkBloc()..add(HomeworkLoaded()),
       child: Scaffold(
-        backgroundColor: const Color(0xFFF5F5F5),
+        backgroundColor: context.colors.surface,
         appBar: const AppAppBar(title: 'Subjectwise H.W.'),
         body: Column(
           children: [
@@ -57,14 +58,16 @@ class HomeworkPage extends StatelessWidget {
                             Icon(
                               Icons.assignment_outlined,
                               size: context.scale(64),
-                              color: Colors.grey.withValues(alpha: 0.5),
+                              color: context.colors.textSecondary.withValues(
+                                alpha: 0.5,
+                              ),
                             ),
                             SizedBox(height: context.scaleHeight(16)),
                             Text(
                               'No Homework Assigned',
                               style: TextStyle(
                                 fontSize: context.scaleFont(16),
-                                color: Colors.grey,
+                                color: context.colors.textSecondary,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),

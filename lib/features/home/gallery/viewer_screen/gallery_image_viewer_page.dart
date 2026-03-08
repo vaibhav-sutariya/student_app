@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import '../../../../cubit/theme_cubit.dart';
 
 import '../../../../core/helpers/extensions/responsive_extensions.dart';
 import '../../../../core/widgets/app_loader.dart';
@@ -97,7 +98,7 @@ class _GalleryImageViewerPageState extends State<GalleryImageViewerPage> {
     if (_isLoading || _images == null) {
       return Scaffold(
         backgroundColor: Colors.black,
-        body: const AppLoader(color: Colors.white, center: true),
+        body: AppLoader(color: context.colors.textInverse, center: true),
       );
     }
 
@@ -108,7 +109,7 @@ class _GalleryImageViewerPageState extends State<GalleryImageViewerPage> {
           child: Text(
             'No images found',
             style: TextStyle(
-              color: Colors.white.withValues(alpha: 0.5),
+              color: context.colors.textInverse.withValues(alpha: 0.5),
               fontSize: context.scaleFont(16),
             ),
           ),
@@ -191,7 +192,7 @@ class _ImageViewItemState extends State<_ImageViewItem> {
           fit: BoxFit.contain,
           placeholder: (context, url) => Container(
             color: Colors.black,
-            child: const Center(child: AppLoader(color: Colors.white)),
+            child: Center(child: AppLoader(color: context.colors.textInverse)),
           ),
           errorWidget: (context, url, error) => Container(
             color: Colors.black,
@@ -201,14 +202,14 @@ class _ImageViewItemState extends State<_ImageViewItem> {
                 children: [
                   Icon(
                     Icons.image_not_supported,
-                    color: Colors.white.withValues(alpha: 0.5),
+                    color: context.colors.textInverse.withValues(alpha: 0.5),
                     size: context.scale(64),
                   ),
                   SizedBox(height: context.scaleHeight(16)),
                   Text(
                     'Failed to load image',
                     style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.5),
+                      color: context.colors.textInverse.withValues(alpha: 0.5),
                       fontSize: context.scaleFont(16),
                     ),
                   ),
@@ -254,7 +255,7 @@ class _TopBar extends StatelessWidget {
           children: [
             // Back button
             IconButton(
-              icon: const Icon(Icons.arrow_back, color: Colors.white),
+              icon: Icon(Icons.arrow_back, color: context.colors.textInverse),
               onPressed: () => context.router.maybePop(),
             ),
             const Spacer(),
@@ -271,7 +272,7 @@ class _TopBar extends StatelessWidget {
               child: Text(
                 '${currentIndex + 1} / $totalImages',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: context.colors.textInverse,
                   fontSize: context.scaleFont(14),
                   fontWeight: FontWeight.w600,
                 ),

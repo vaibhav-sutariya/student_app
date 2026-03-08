@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/helpers/extensions/responsive_extensions.dart';
 import '../../../core/widgets/app_app_bar.dart';
 import '../../../core/widgets/app_loader.dart';
-import '../../../cubit/theme_cubit.dart';
+import '../../cubit/theme_cubit.dart';
 import 'bloc/notification_bloc.dart';
 import 'bloc/notification_event.dart';
 import 'bloc/notification_state.dart';
@@ -44,7 +44,7 @@ class NotificationPage extends StatelessWidget {
                   child: Text(
                     'No notifications yet',
                     style: context.textTheme.bodyLarge?.copyWith(
-                      color: context.colors.surface500,
+                      color: context.colors.textSecondary,
                     ),
                   ),
                 );
@@ -71,7 +71,7 @@ class NotificationPage extends StatelessWidget {
                         child: Text(
                           groupDate,
                           style: context.textTheme.labelMedium?.copyWith(
-                            color: context.colors.surface600,
+                            color: context.colors.textSecondary,
                             fontWeight: FontWeight.bold,
                             letterSpacing: 1.2,
                           ),

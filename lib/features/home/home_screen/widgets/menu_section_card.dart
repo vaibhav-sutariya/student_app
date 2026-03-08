@@ -24,12 +24,15 @@ class MenuSectionCard extends StatelessWidget {
     final borderRadius = BorderRadius.circular(context.scale(16));
 
     return Card(
-      color: Colors.white,
+      color: context.colors.textInverse,
       elevation: 2,
       shadowColor: Colors.black.withValues(alpha: 0.1),
       shape: RoundedRectangleBorder(
         borderRadius: borderRadius,
-        side: BorderSide(color: Colors.grey.withValues(alpha: 0.08), width: 1),
+        side: BorderSide(
+          color: context.colors.textSecondary.withValues(alpha: 0.08),
+          width: 1,
+        ),
       ),
       child: Stack(
         children: [

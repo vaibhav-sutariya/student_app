@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/helpers/extensions/responsive_extensions.dart';
@@ -43,7 +44,7 @@ class _GalleryDetailPageContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF5F5F5),
+      backgroundColor: context.colors.surface,
       appBar: AppAppBar(
         title: gallery.title ?? 'Gallery',
         profileImageUrl: 'https://i.pravatar.cc/150?u=a042581f4e29026024d',
@@ -151,14 +152,14 @@ class _GalleryDetailScrollView extends StatelessWidget {
                           Icon(
                             Icons.photo_outlined,
                             size: context.scale(64),
-                            color: Colors.grey[400],
+                            color: context.colors.textSecondary,
                           ),
                           SizedBox(height: context.scaleHeight(16)),
                           Text(
                             'No images found',
                             style: TextStyle(
                               fontSize: context.scaleFont(16),
-                              color: Colors.grey[600],
+                              color: context.colors.textSecondary,
                             ),
                             textAlign: TextAlign.center,
                           ),
@@ -288,7 +289,7 @@ class _GalleryImageItemState extends State<_GalleryImageItem> {
       },
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.grey[200],
+          color: context.colors.textSecondary,
           borderRadius: BorderRadius.circular(context.scale(4)),
         ),
         child: ClipRRect(
@@ -297,14 +298,17 @@ class _GalleryImageItemState extends State<_GalleryImageItem> {
             imageUrl: widget.image.thumbnailUrl ?? widget.image.imageUrl ?? '',
             fit: BoxFit.cover,
             placeholder: (context, url) => Container(
-              color: Colors.grey[200],
-              child: AppLoader(strokeWidth: 2.0, color: Colors.grey[400]),
+              color: context.colors.textSecondary,
+              child: AppLoader(
+                strokeWidth: 2.0,
+                color: context.colors.textSecondary,
+              ),
             ),
             errorWidget: (context, url, error) => Container(
-              color: Colors.grey[200],
+              color: context.colors.textSecondary,
               child: Icon(
                 Icons.image_not_supported,
-                color: Colors.grey[400],
+                color: context.colors.textSecondary,
                 size: context.scale(24),
               ),
             ),

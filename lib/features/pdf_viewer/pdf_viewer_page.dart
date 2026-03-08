@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../core/di/injection.dart';
@@ -20,19 +21,19 @@ class PdfViewerPage extends StatelessWidget {
     return BlocProvider(
       create: (context) => PdfBloc(repository: sl())..add(LoadPdf(pdfUrl)),
       child: Scaffold(
-        backgroundColor: const Color(0xFFF5F5F5),
+        backgroundColor: context.colors.surface,
         appBar: AppAppBar(title: title),
         body: BlocBuilder<PdfBloc, PdfState>(
           builder: (context, state) {
             if (state is PdfLoading) {
-              return const Center(child: AppLoader());
+              return Center(child: AppLoader());
             } else if (state is PdfLoaded) {
               return AppPdfViewer(filePath: state.filePath);
             } else if (state is PdfError) {
               return Center(
                 child: Text(
                   state.message,
-                  style: const TextStyle(color: Colors.red),
+                  style: TextStyle(color: context.colors.textError),
                 ),
               );
             }

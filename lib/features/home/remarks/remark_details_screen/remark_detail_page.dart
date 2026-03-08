@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 
 import '../../../../core/helpers/extensions/responsive_extensions.dart';
 import '../../../../core/widgets/app_app_bar.dart';
 import '../../../../core/widgets/app_primary_button.dart';
-import '../../../../cubit/theme_cubit.dart';
 import '../remarks_screen/models/remark_model.dart';
 import 'widgets/action_required_card.dart';
 import 'widgets/remark_detail_item.dart';
@@ -21,7 +21,7 @@ class RemarkDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF5F5F5),
+      backgroundColor: context.colors.surface,
       appBar: AppAppBar(
         title: 'Remark Detail',
         profileImageUrl: 'https://i.pravatar.cc/150?u=a042581f4e29026024d',
@@ -35,7 +35,7 @@ class RemarkDetailPage extends StatelessWidget {
             Container(
               margin: EdgeInsets.all(context.scale(16)),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: context.colors.textInverse,
                 borderRadius: BorderRadius.circular(context.scale(16)),
                 boxShadow: [
                   BoxShadow(
@@ -82,7 +82,7 @@ class RemarkDetailPage extends StatelessWidget {
                         children: [
                           Icon(
                             Icons.chat_bubble_outline,
-                            color: Colors.white,
+                            color: context.colors.textInverse,
                             size: context.scale(20),
                           ),
                           SizedBox(width: context.scale(8)),
@@ -91,7 +91,7 @@ class RemarkDetailPage extends StatelessWidget {
                             style: TextStyle(
                               fontSize: context.scaleFont(16),
                               fontWeight: FontWeight.w600,
-                              color: Colors.white,
+                              color: context.colors.textInverse,
                             ),
                           ),
                         ],
@@ -111,7 +111,7 @@ class RemarkDetailPage extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: context.scaleFont(14),
                                 fontWeight: FontWeight.w500,
-                                color: Colors.grey[600],
+                                color: context.colors.textSecondary,
                                 decoration: TextDecoration.underline,
                               ),
                             ),
@@ -119,7 +119,7 @@ class RemarkDetailPage extends StatelessWidget {
                             Container(
                               width: context.scale(100),
                               height: context.scaleHeight(1),
-                              color: Colors.grey[300],
+                              color: context.colors.textSecondary,
                             ),
                           ],
                         ),
@@ -157,7 +157,7 @@ class _RemarkDetailsSection extends StatelessWidget {
         SizedBox(height: context.scaleHeight(16)),
         RemarkDetailItem(
           icon: Icons.category_outlined,
-          iconColor: const Color(0xFFFF9800),
+          iconColor: context.colors.warning,
           label: 'Category',
           value: _getCategoryLabel(remark.category),
         ),
@@ -165,15 +165,15 @@ class _RemarkDetailsSection extends StatelessWidget {
         RemarkDetailItem(
           icon: Icons.trending_down_outlined,
           iconColor: remark.type == RemarkType.positive
-              ? const Color(0xFF4CAF50)
-              : const Color(0xFFE53935),
+              ? context.colors.success
+              : context.colors.error,
           label: 'Evaluation Type',
           value: remark.type == RemarkType.positive
               ? 'Positive Remark'
               : 'Negative Remark',
           valueColor: remark.type == RemarkType.positive
-              ? const Color(0xFF4CAF50)
-              : const Color(0xFFE53935),
+              ? context.colors.success
+              : context.colors.error,
           showDot: true,
         ),
       ],
@@ -234,14 +234,18 @@ class _TeachersNoteSection extends StatelessWidget {
       children: [
         Row(
           children: [
-            Icon(Icons.menu, color: Colors.grey[700], size: context.scale(20)),
+            Icon(
+              Icons.menu,
+              color: context.colors.textSecondary,
+              size: context.scale(20),
+            ),
             SizedBox(width: context.scale(8)),
             Text(
               "Teacher's Note",
               style: TextStyle(
                 fontSize: context.scaleFont(16),
                 fontWeight: FontWeight.w700,
-                color: const Color(0xFF1A1A1A),
+                color: Colors.black,
               ),
             ),
           ],
@@ -251,14 +255,14 @@ class _TeachersNoteSection extends StatelessWidget {
           width: double.infinity,
           padding: EdgeInsets.all(context.scale(16)),
           decoration: BoxDecoration(
-            color: Colors.grey[100],
+            color: context.colors.textSecondary,
             borderRadius: BorderRadius.circular(context.scale(12)),
           ),
           child: Text(
             remark.description ?? 'No note available.',
             style: TextStyle(
               fontSize: context.scaleFont(14),
-              color: Colors.grey[800],
+              color: context.colors.textSecondary,
               fontStyle: FontStyle.italic,
               height: 1.5,
             ),

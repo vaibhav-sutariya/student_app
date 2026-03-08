@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/helpers/extensions/responsive_extensions.dart';
 import '../../../../core/widgets/app_app_bar.dart';
@@ -30,7 +31,7 @@ class GatePassView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF5F5F7), // Light grey background
+      backgroundColor: context.colors.surface, // Light grey background
       appBar: const AppAppBar(title: 'Gate Pass'),
       body: Column(
         children: [
@@ -39,7 +40,7 @@ class GatePassView extends StatelessWidget {
             selector: (state) => state.selectedTabIndex,
             builder: (context, selectedIndex) {
               return AppTabBar(
-                tabs: const ['Student', 'Parents'],
+                tabs: ['Student', 'Parents'],
                 selectedIndex: selectedIndex,
                 onTabChanged: (index) {
                   context.read<GatePassBloc>().add(SwitchTab(index));
@@ -92,14 +93,14 @@ class GatePassView extends StatelessWidget {
           Icon(
             Icons.no_accounts_outlined,
             size: context.scale(48),
-            color: Colors.grey[400],
+            color: Colors.grey,
           ),
           SizedBox(height: context.scaleHeight(16)),
           Text(
             'No gate passes found',
             style: TextStyle(
               fontSize: context.scaleFont(16),
-              color: Colors.grey[600],
+              color: Colors.grey,
             ),
           ),
         ],

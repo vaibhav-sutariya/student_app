@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 
 import '../../../../../core/helpers/extensions/responsive_extensions.dart';
 
@@ -31,12 +32,12 @@ class MenuItem extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Card(
-        color: Colors.white,
+        color: context.colors.textInverse,
         elevation: 4,
         shadowColor: Colors.black.withOpacity(0.5),
         shape: RoundedRectangleBorder(
           borderRadius: borderRadius,
-          side: const BorderSide(color: Color(0xFFEEEEEE), width: 1),
+          side: BorderSide(color: context.colors.surface200, width: 1),
         ),
         margin: EdgeInsets.zero,
         child: Column(
@@ -57,7 +58,7 @@ class MenuItem extends StatelessWidget {
               style: TextStyle(
                 fontSize: fontSize,
                 fontWeight: FontWeight.w600,
-                color: Colors.black87,
+                color: Colors.black,
                 letterSpacing: 0.3,
               ),
               textAlign: TextAlign.center,

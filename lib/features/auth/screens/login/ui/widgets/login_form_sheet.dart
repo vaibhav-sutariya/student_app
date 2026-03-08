@@ -9,7 +9,7 @@ import '../../../../../../cubit/theme_cubit.dart';
 import 'login_tab_switcher.dart';
 
 class LoginFormSheet extends StatefulWidget {
-  const LoginFormSheet({super.key});
+  LoginFormSheet({super.key});
 
   @override
   State<LoginFormSheet> createState() => _LoginFormSheetState();
@@ -33,9 +33,9 @@ class _LoginFormSheetState extends State<LoginFormSheet> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
+      decoration: BoxDecoration(
+        color: context.colors.textInverse,
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(30)),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
       child: SafeArea(
@@ -55,7 +55,10 @@ class _LoginFormSheetState extends State<LoginFormSheet> {
             const SizedBox(height: 8),
             Text(
               'Please sign in to your account',
-              style: TextStyle(fontSize: 14, color: Colors.grey[600]),
+              style: TextStyle(
+                fontSize: 14,
+                color: context.colors.textSecondary,
+              ),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 32),
@@ -90,7 +93,7 @@ class _LoginFormSheetState extends State<LoginFormSheet> {
                       index == 0
                           ? Icons.phone_android_rounded
                           : Icons.email_rounded,
-                      color: const Color(0xFF5C6BC0), // Reference blue-ish
+                      color: context.colors.textTertiary, // Reference blue-ish
                     ),
                     keyboardType: index == 0
                         ? TextInputType.phone
@@ -139,7 +142,7 @@ class _LoginFormSheetState extends State<LoginFormSheet> {
                 }
               },
               // borderRadius: 30, // Removed to standardize on 16
-              child: const Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
@@ -147,14 +150,14 @@ class _LoginFormSheetState extends State<LoginFormSheet> {
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: context.colors.textInverse,
                     ),
                   ),
-                  SizedBox(width: 8),
+                  const SizedBox(width: 8),
                   Icon(
                     Icons.arrow_forward_ios_rounded,
                     size: 16,
-                    color: Colors.white,
+                    color: context.colors.textInverse,
                   ),
                 ],
               ),
@@ -165,7 +168,10 @@ class _LoginFormSheetState extends State<LoginFormSheet> {
             RichText(
               textAlign: TextAlign.center,
               text: TextSpan(
-                style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+                style: TextStyle(
+                  fontSize: 12,
+                  color: context.colors.textSecondary,
+                ),
                 children: [
                   const TextSpan(
                     text: 'By continuing, you agree to Elite Academy\'s\n',
@@ -173,7 +179,7 @@ class _LoginFormSheetState extends State<LoginFormSheet> {
                   TextSpan(
                     text: 'Terms of Service',
                     style: TextStyle(
-                      color: Colors.grey[700],
+                      color: context.colors.textSecondary,
                       decoration: TextDecoration.underline,
                       fontWeight: FontWeight.bold,
                     ),
@@ -182,7 +188,7 @@ class _LoginFormSheetState extends State<LoginFormSheet> {
                   TextSpan(
                     text: 'Privacy Policy',
                     style: TextStyle(
-                      color: Colors.grey[700],
+                      color: context.colors.textSecondary,
                       decoration: TextDecoration.underline,
                       fontWeight: FontWeight.bold,
                     ),

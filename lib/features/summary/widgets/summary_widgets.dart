@@ -38,7 +38,7 @@ class SummaryHeader extends StatelessWidget {
               Text(
                 model.date,
                 style: context.textTheme.bodyMedium?.copyWith(
-                  color: context.colors.surface600,
+                  color: context.colors.textSecondary,
                 ),
               ),
               SizedBox(height: context.scaleHeight(4)),
@@ -65,7 +65,7 @@ class SummaryHeader extends StatelessWidget {
           left: context.scale(100),
           child: Opacity(
             opacity: 0.3,
-            child: const Icon(Icons.star, color: Colors.amber, size: 24),
+            child: Icon(Icons.star, color: Colors.amber, size: 24),
           ),
         ),
         Positioned(
@@ -73,7 +73,7 @@ class SummaryHeader extends StatelessWidget {
           right: context.scale(60),
           child: Opacity(
             opacity: 0.2,
-            child: const Icon(Icons.star_border, color: Colors.blue, size: 18),
+            child: Icon(Icons.star_border, color: Colors.blue, size: 18),
           ),
         ),
         Positioned(
@@ -83,7 +83,7 @@ class SummaryHeader extends StatelessWidget {
             opacity: 0.2,
             child: Transform.rotate(
               angle: 0.5,
-              child: const Icon(Icons.category, color: Colors.orange, size: 30),
+              child: Icon(Icons.category, color: Colors.orange, size: 30),
             ),
           ),
         ),
@@ -223,7 +223,7 @@ class AcademicCard extends StatelessWidget {
                 Text(
                   model.subtitle,
                   style: context.textTheme.bodyLarge?.copyWith(
-                    color: context.colors.surface900,
+                    color: Colors.black,
                   ),
                 ),
               ],
@@ -240,9 +240,9 @@ class AcademicCard extends StatelessWidget {
                 ],
               ),
             ),
-            child: const Icon(
+            child: Icon(
               Icons.arrow_forward,
-              color: Colors.white,
+              color: context.colors.textInverse,
               size: 16,
             ),
           ),

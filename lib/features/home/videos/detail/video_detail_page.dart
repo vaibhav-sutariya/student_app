@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:student_app/cubit/theme_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/helpers/extensions/responsive_extensions.dart';
@@ -43,7 +44,7 @@ class _VideoDetailPageContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF5F5F5),
+      backgroundColor: context.colors.surface,
       appBar: AppAppBar(
         title: video.title ?? 'Videos',
         profileImageUrl: 'https://i.pravatar.cc/150?u=a042581f4e29026024d',
@@ -154,14 +155,14 @@ class _VideoDetailScrollView extends StatelessWidget {
                           Icon(
                             Icons.video_library_outlined,
                             size: context.scale(64),
-                            color: Colors.grey[400],
+                            color: context.colors.textSecondary,
                           ),
                           SizedBox(height: context.scaleHeight(16)),
                           Text(
                             'No videos found',
                             style: TextStyle(
                               fontSize: context.scaleFont(16),
-                              color: Colors.grey[600],
+                              color: context.colors.textSecondary,
                             ),
                             textAlign: TextAlign.center,
                           ),
@@ -291,7 +292,7 @@ class _VideoItemState extends State<_VideoItem> {
       },
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.grey[200],
+          color: context.colors.textSecondary,
           borderRadius: BorderRadius.circular(context.scale(4)),
         ),
         child: ClipRRect(
@@ -303,17 +304,20 @@ class _VideoItemState extends State<_VideoItem> {
                 imageUrl: widget.video.thumbnailUrl ?? '',
                 fit: BoxFit.cover,
                 placeholder: (context, url) => Container(
-                  color: Colors.grey[200],
+                  color: context.colors.textSecondary,
                   child: Center(
-                    child: AppLoader(strokeWidth: 2.0, color: Colors.grey[400]),
+                    child: AppLoader(
+                      strokeWidth: 2.0,
+                      color: context.colors.textSecondary,
+                    ),
                   ),
                 ),
 
                 errorWidget: (context, url, error) => Container(
-                  color: Colors.grey[200],
+                  color: context.colors.textSecondary,
                   child: Icon(
                     Icons.video_library_outlined,
-                    color: Colors.grey[400],
+                    color: context.colors.textSecondary,
                     size: context.scale(24),
                   ),
                 ),
@@ -330,7 +334,7 @@ class _VideoItemState extends State<_VideoItem> {
                   ),
                   child: Icon(
                     Icons.play_arrow,
-                    color: Colors.white,
+                    color: context.colors.textInverse,
                     size: context.scale(24),
                   ),
                 ),
@@ -352,7 +356,7 @@ class _VideoItemState extends State<_VideoItem> {
                     child: Text(
                       widget.video.duration ?? '',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: context.colors.textInverse,
                         fontSize: context.scaleFont(10),
                         fontWeight: FontWeight.w600,
                       ),

@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import '../../../../../../core/helpers/extensions/responsive_extensions.dart';
-import '../../../../../../cubit/theme_cubit.dart';
+import '../../../../cubit/theme_cubit.dart';
 import '../models/achievement_model.dart';
 
 class AchievementCard extends StatelessWidget {
@@ -36,7 +36,7 @@ class AchievementCard extends StatelessWidget {
                 child: Center(
                   child: Icon(
                     Icons.emoji_events_rounded,
-                    color: context.colors.surface400,
+                    color: context.colors.textTertiary,
                     size: context.scale(40),
                   ),
                 ),
@@ -46,7 +46,7 @@ class AchievementCard extends StatelessWidget {
                 child: Center(
                   child: Icon(
                     Icons.error_outline_rounded,
-                    color: context.colors.surface400,
+                    color: context.colors.textTertiary,
                   ),
                 ),
               ),
@@ -88,7 +88,7 @@ class AchievementCard extends StatelessWidget {
                       achievement.date,
                       style: TextStyle(
                         fontSize: context.scaleFont(14),
-                        color: context.colors.surface600,
+                        color: context.colors.textSecondary,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -102,7 +102,7 @@ class AchievementCard extends StatelessWidget {
                   style: TextStyle(
                     fontSize: context.scaleFont(15),
                     fontWeight: FontWeight.bold,
-                    color: context.colors.surface900,
+                    color: Colors.black,
                   ),
                 ),
                 SizedBox(height: context.scaleHeight(8)),
@@ -112,7 +112,7 @@ class AchievementCard extends StatelessWidget {
                   achievement.description,
                   style: TextStyle(
                     fontSize: context.scaleFont(12),
-                    color: context.colors.surface500,
+                    color: context.colors.textSecondary,
                     height: 1.5,
                   ),
                 ),
